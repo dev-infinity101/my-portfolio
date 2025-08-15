@@ -1,0 +1,63 @@
+/* Base background for mobile */
+body {
+  background-color: #FFF3E0; /* Warm base color */
+}
+
+.dark body {
+  background-color: #1a1a1a; /* Dark black shade */
+}
+
+/* Desktop fire-like gradient animation */
+@media (min-width: 768px) {
+  body {
+    background: linear-gradient(-45deg, #f50303, #88f5e6, #f84b06fa, #f56c6c);
+    background-size: 400% 400%;
+    animation: fireFlare 10s ease infinite;
+    position: relative;
+  }
+
+  .dark body {
+    background: linear-gradient(-45deg, #380c55, #19191afa, #1a131b, #000);
+    background-size: 400% 400%;
+    animation: fireFlare 10s ease infinite;
+  }
+
+  body::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle, rgba(255,255,255,0.2) 0%, rgba(255,165,0,0.1) 100%);
+    animation: flarePulse 5s ease-in-out infinite;
+    pointer-events: none;
+  }
+
+  .dark body::before {
+    background: radial-gradient(circle, rgba(0,0,0,0.3) 0%, rgba(50,50,50,0.2) 100%);
+  }
+}
+
+@keyframes fireFlare {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+@keyframes flarePulse {
+  0%, 100% {
+    opacity: 0.5;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.1);
+  }
+}
