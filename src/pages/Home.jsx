@@ -29,7 +29,7 @@ function Home() {
   return (
     <div className="min-h-screen flex flex-col items-center justify-center p-4 font-sans">
       <motion.div
-        className="w-full max-w-md mx-auto bg-white/80 backdrop-blur-lg rounded-3xl shadow-soft p-6 text-center border border-white/20"
+        className="w-full max-w-md mx-auto bg-white/80 backdrop-blur-lg rounded-3xl shadow-soft p-6 text-center border border-white/20 dark:bg-gray-800/80 dark:border-gray-700"
         variants={containerVariants}
         initial="hidden"
         animate="visible"
@@ -40,10 +40,10 @@ function Home() {
             <ProfileSection />
           </motion.div>
           <motion.div className="flex flex-col gap-4 w-full mt-4" variants={containerVariants}>
-            <motion.div variants={itemVariants}><LinkButton href="#">About Me</LinkButton></motion.div>
-            <motion.div variants={itemVariants}><LinkButton href="#">Projects</LinkButton></motion.div>
+            <motion.div variants={itemVariants}><LinkButton to="/about">About Me</LinkButton></motion.div>
+            <motion.div variants={itemVariants}><LinkButton to="/projects">Projects</LinkButton></motion.div>
             <motion.div variants={itemVariants}><LinkButton href="#">Blog</LinkButton></motion.div>
-            <motion.div variants={itemVariants}><LinkButton href="#">Resume</LinkButton></motion.div>
+            <motion.div variants={itemVariants}><LinkButton to="/resume">Resume</LinkButton></motion.div>
           </motion.div>
           <motion.div variants={itemVariants}><SocialIcons /></motion.div>
         </motion.main>

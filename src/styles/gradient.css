@@ -4,20 +4,20 @@ body {
 }
 
 .dark body {
-  background-color: #1a1a1a; /* Dark black shade */
+  background-color: #070000; /* Softer black shade */
 }
 
 /* Desktop fire-like gradient animation */
 @media (min-width: 768px) {
   body {
-    background: linear-gradient(-45deg, #f50303, #88f5e6, #f84b06fa, #f56c6c);
+    background: linear-gradient(-45deg, #c7c4f1, #88f5e6, #a7f3edfa, #f56cee);
     background-size: 400% 400%;
     animation: fireFlare 10s ease infinite;
     position: relative;
   }
 
   .dark body {
-    background: linear-gradient(-45deg, #380c55, #19191afa, #1a131b, #000);
+    background: linear-gradient(-45deg, #000000, #1a1a1a, #333333, #121212);
     background-size: 400% 400%;
     animation: fireFlare 10s ease infinite;
   }
@@ -29,13 +29,13 @@ body {
     left: 0;
     width: 100%;
     height: 100%;
-    background: radial-gradient(circle, rgba(255,255,255,0.2) 0%, rgba(255,165,0,0.1) 100%);
+    background: radial-gradient(circle, rgba(3, 119, 252, 0.993) 0%, rgba(245, 3, 3, 0.295) 100%);
     animation: flarePulse 5s ease-in-out infinite;
     pointer-events: none;
   }
 
   .dark body::before {
-    background: radial-gradient(circle, rgba(0,0,0,0.3) 0%, rgba(50,50,50,0.2) 100%);
+    background: radial-gradient(circle, rgba(110, 5, 114, 0.3) 0%, rgba(18,18,18,0.2) 100%);
   }
 }
 
@@ -57,7 +57,7 @@ body {
     transform: scale(1);
   }
   50% {
-    opacity: 1;
-    transform: scale(1.1);
+    opacity: 0.8;
+    transform: scale(1.05);
   }
 }
