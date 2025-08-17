@@ -20,7 +20,7 @@ function ProfileSection() {
         Dev Upadhyay <CheckCircle size={18} className="text-blue-500" aria-label="Verified" />
       </h1>
       <p className="text-secondaryText text-sm text-balance">
-         GenAI / FullStack • DSA
+         GenAI / FullStack developer
       </p>
     </section>
   );

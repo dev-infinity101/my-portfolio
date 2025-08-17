@@ -4,6 +4,7 @@ import Home from './pages/Home.jsx';
 import AboutMe from './pages/AboutMe.jsx';
 import Projects from './pages/Projects.jsx';
 import Resume from './pages/Resume.jsx';
+import GetInTouch from './pages/GetInTouch.jsx';
 
 export const ThemeContext = createContext();
 
@@ -30,6 +31,7 @@ function App() {
           <Route path="/about" element={<AboutMe />} />
           <Route path="/projects" element={<Projects />} />
           <Route path="/resume" element={<Resume />} />
+          <Route path="/contact" element={<GetInTouch />} />
         </Routes>
       </Router>
     </ThemeContext.Provider>

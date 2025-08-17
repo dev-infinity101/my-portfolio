@@ -1,11 +1,18 @@
-import qrCode from '../assets/cat-logo.png'; // Replace with actual QR code image
-function Footer() {
+import VisitorCounter from './VisitorCounter';
+import catLogo from '../assets/catz.png'; // Import the cat logo
+
+const Footer = () => {
   return (
-    <footer className="text-secondaryText text-sm font-medium py-4 text-center w-full mt-4 flex flex-col items-center gap-2">
-      <img src={qrCode} alt="QR Code" className="w-24 h-24" />
-      © {new Date().getFullYear()} @devv. All rights reserved.
+    <footer className="bg-transparent">
+      <div className="max-w-6xl mx-auto px-4 py-6 border-none shadow-none">  {/* Made containing div not visibly rendered */}
+        <VisitorCounter />  {/* Assuming this renders timestamp and visitor count in the desired order */}
+        <img src={catLogo} alt="Logo" className="mx-auto h-24 w-auto " />
+        <div className="text-center text-sm text-gray-500 dark:text-gray-400">
+          <p>&copy; {new Date().getFullYear()} Prabodh.dev. All Rights Reserved.</p>
+        </div>
+      </div>
     </footer>
   );
-}
+};
 
 export default Footer;

@@ -5,30 +5,25 @@ import { ArrowLeft, Github, ExternalLink } from 'lucide-react';
 // Placeholder project data - replace with your actual projects
 const projects = [
   {
-    title: 'Resume AI ',
-
+    title: 'Resume AI',
     description: 'A tool that optimizes resumes for job applications, using AI to generate personalized cover letters and job descriptions.',
-    tags: ['Next.js', 'python', 'MongoDB', 'gemini api'],
-    imageUrl: 'https://images.unsplash.com/photo-1522199755839-a2bacb67c546?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1172&q=80',
-    liveUrl: '#',
+    techStack: ['Next.js', 'Python', 'MongoDB', 'Gemini API'],
     githubUrl: '#',
+    liveUrl: '#',
   },
   {
-    title: 'AI interviewer',
-
+    title: 'AI Interviewer',
     description: 'An interactive AI agent that uses AI to help you prepare for job interviews, by providing real-time feedback and personalized practice questions.',
-    tags: ['Next.js', 'python', 'MongoDB', 'gemini tss sst','deepgram api'],
-    imageUrl: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80',
-    liveUrl: '#',
+    techStack: ['Next.js', 'Python', 'MongoDB', 'Gemini TTS/STT', 'Deepgram API'],
     githubUrl: '#',
+    liveUrl: '#',
   },
   {
     title: 'Portfolio Website',
     description: 'A personal portfolio to showcase my skills and projects, built with Vite, React, and Framer Motion.',
-    tags: ['Vite', 'React', 'Framer Motion', 'Tailwind CSS'],
-    imageUrl: 'https://images.unsplash.com/photo-1581291518857-4e27b48ff24e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80',
-    liveUrl: '#',
+    techStack: ['Vite', 'React', 'Framer Motion', 'Tailwind CSS'],
     githubUrl: '#',
+    liveUrl: '#',
   },
   // Add more projects here
 ];
@@ -36,19 +31,12 @@ const projects = [
 function Projects() {
   const containerVariants = {
     hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: { staggerChildren: 0.2 }
-    }
+    visible: { opacity: 1, transition: { staggerChildren: 0.2 } }
   };
 
   const itemVariants = {
     hidden: { opacity: 0, y: 20 },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: { duration: 0.5, ease: 'easeOut' }
-    }
+    visible: { opacity: 1, y: 0, transition: { duration: 0.5, ease: 'easeOut' } }
   };
 
   return (
@@ -66,23 +54,24 @@ function Projects() {
           </Link>
         </motion.div>
 
-        <motion.h1 
-          className="text-4xl sm:text-5xl font-bold mb-8 text-primaryText dark:text-white"
+        <motion.h1
+          className="text-6xl font-bold mb-12 text-primaryText dark:text-white font-mono transform -rotate-6 md:text-left text-center" // Added font-mono here
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
+          style={{ fontFamily: 'font-mono,' }}
         >
-          My Projects
+          Projects
         </motion.h1>
 
-        <motion.div 
+        <motion.div
           className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
           variants={containerVariants}
           initial="hidden"
           animate="visible"
         >
           {projects.map((project, index) => (
-            <ProjectCard key={index} project={project} variants={itemVariants} />
+            <ProjectCard key={index} project={project} variants={itemVariants} index={index} />
           ))}
         </motion.div>
       </div>
@@ -90,30 +79,41 @@ function Projects() {
   );
 }
 
-function ProjectCard({ project, variants }) {
+
+function ProjectCard({ project, variants, index }) {
   return (
-    <motion.div 
+    <motion.div
       variants={variants}
-      className="bg-white dark:bg-gray-800 rounded-2xl shadow-lg overflow-hidden border border-gray-200/80 dark:border-gray-700/60 group"
-      whileHover={{ y: -8, transition: { duration: 0.3 } }}
+      className="bg-white dark:bg-gray-800 rounded-2xl shadow-lg overflow-hidden border border-gray-200/80 dark:border-gray-700/60 group transform md:hover:rotate-0 transition-transform duration-300 md:rotate-[${index % 2 === 0 ? '3' : '-3'}deg]"
+      whileHover={{ scale: 1.05, rotate: 0, boxShadow: '0 25px 50px rgba(0,0,0,0.15)' }}
     >
-      <img src={project.imageUrl} alt={project.title} className="w-full h-48 object-cover" />
       <div className="p-6">
-        <h3 className="text-2xl font-bold mb-2 text-primaryText dark:text-white">{project.title}</h3>
+        <h3 className="text-3xl font-bold mb-2 text-primaryText dark:text-white">{`0${index + 1}`} {project.title}</h3>
         <p className="text-secondaryText dark:text-gray-300 mb-4">{project.description}</p>
-        <div className="flex flex-wrap gap-2 mb-4">
-          {project.tags.map(tag => (
-            <span key={tag} className="bg-blue-100 text-blue-800 text-xs font-semibold px-2.5 py-0.5 rounded-full dark:bg-blue-900 dark:text-blue-200">
-              {tag}
-            </span>
-          ))}
+        <div className="mb-4">
+          <h4 className="text-lg font-semibold mb-2 dark:text-white">Tech Stack:</h4>
+          <ul className="list-disc pl-5 text-secondaryText dark:text-gray-300">
+            {project.techStack.map((tech, i) => (
+              <li key={i}>{tech}</li>
+            ))}
+          </ul>
         </div>
         <div className="flex justify-end gap-4 mt-4">
-          <a href={project.githubUrl} target="_blank" rel="noopener noreferrer" className="text-gray-500 dark:text-gray-400 hover:text-primaryText dark:hover:text-white transition-colors">
-            <Github size={24} />
+          <a
+            href={project.githubUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="bg-gray-200 dark:bg-gray-700 text-gray-800 dark:text-white py-2 px-4 rounded-md hover:bg-gray-300 dark:hover:bg-gray-600 transition flex items-center gap-2"
+          >
+            GitHub <Github size={18} />
           </a>
-          <a href={project.liveUrl} target="_blank" rel="noopener noreferrer" className="text-gray-500 dark:text-gray-400 hover:text-primaryText dark:hover:text-white transition-colors">
-            <ExternalLink size={24} />
+          <a
+            href={project.liveUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="bg-indigo-600 text-white py-2 px-4 rounded-md hover:bg-indigo-700 transition flex items-center gap-2"
+          >
+            Live Demo <ExternalLink size={18} />
           </a>
         </div>
       </div>

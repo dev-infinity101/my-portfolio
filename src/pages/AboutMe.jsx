@@ -7,22 +7,27 @@ import profilePic from '../assets/dev-smile.svg';
 function AboutMe() {
   const timelineItems = [
     {
-      company: 'Innovatech Solutions',
-      role: 'Lead Frontend Architect',
-      duration: '2021 - Present',
+      company: 'Shunyaa.ek pvt ltd',
+
+      role: 'Frontend Architect',
+      duration: '2025 july - present',
       description: 'Architecting scalable, high-performance user interfaces with React and Next.js. Driving the adoption of modern frontend practices and mentoring junior developers.',
     },
     {
-      company: 'Creative Code Inc.',
-      role: 'Senior UI/UX Engineer',
-      duration: '2019 - 2021',
-      description: 'Translated complex design systems into pixel-perfect, responsive web applications. Specialized in creating fluid animations and optimizing for user experience.',
+      company: 'Slothpays',
+      role: 'Artifial intelligence Intern',
+      duration: '2025 april- 2025 june',
+      description: 'Worked on various projects using GenAI frameworks. Gained experience in natural language processing and machine learning. Made a custom voice assistant using RAG model and Langchain.',
+
+
     },
     {
-      company: 'Digital Dynamos',
-      role: 'Junior Web Developer',
-      duration: '2017 - 2019',
-      description: 'Developed and maintained client websites using HTML, CSS, and JavaScript. Gained foundational experience in an agile development environment.',
+      company: 'Self Employed',
+
+      role: 'Python tutor',
+      duration: '2024 oct - 2025',
+      description: 'Taught python to students in school. Gained experience in teaching and mentoring students. Helped students in understanding the concepts of python.',
+
     },
   ];
 
@@ -79,7 +84,7 @@ function AboutMe() {
               About Me
             </h1>
             <p className="text-lg mb-8 text-secondaryText dark:text-gray-300">
-              Hi, I'm Prabodh Upadhyay aka Devv , a freelance developer from Lucknow, India. I work with Next.js and python along GenAI frameworks sometimes. You can find me on Twitter, usually shitposting (and occasionally posting useless stuff too). I'm open to work!
+              Hi, I'm Devv , a freelance developer from Lucknow, India . I work with Next.js, Python, and sometimes dabble in GenAI. You can find me on Twitter, usually shitposting (and occasionally posting useless stuff too). I'm open to work!
             </p>
             
             <div className="relative border-l-2 border-blue-500/30 dark:border-blue-400/30 pl-8">
