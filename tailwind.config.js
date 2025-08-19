@@ -36,6 +36,8 @@ export default {
       boxShadow: {
         'soft': '0 8px 32px rgba(0, 0, 0, 0.1)',
         'soft-hover': '0 12px 40px rgba(0, 0, 0, 0.12)',
+        'neon-blue': "0 0 10px theme('colors.blue.400'), 0 0 20px theme('colors.blue.400'), 0 0 30px theme('colors.blue.400')",
+        'neon-dark': "0 0 10px rgba(110, 5, 114, 0.3), 0 0 20px rgba(110, 5, 114, 0.3), 0 0 30px rgba(110, 5, 114, 0.3)"
       }
     },
   },

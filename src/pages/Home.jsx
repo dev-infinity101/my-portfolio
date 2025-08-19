@@ -43,7 +43,6 @@ function Home() {
             <motion.div variants={itemVariants}><LinkButton to="/about">About Me</LinkButton></motion.div>
             <motion.div variants={itemVariants}><LinkButton to="/projects">Projects</LinkButton></motion.div>
             <motion.div variants={itemVariants}><LinkButton href="https://medium.com/@prabodhq89">Blog</LinkButton></motion.div>
-            <motion.div variants={itemVariants}><LinkButton to="/resume">Resume</LinkButton></motion.div>
             <motion.div variants={itemVariants}><LinkButton to="/contact">Get in Touch</LinkButton></motion.div>
           </motion.div>
           <motion.div variants={itemVariants}><SocialIcons /></motion.div>

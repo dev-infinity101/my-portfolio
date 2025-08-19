@@ -70,13 +70,6 @@ function AboutMe() {
     }
   ];
 
-  const stats = [
-    { label: 'Years of Experience', value: '2+', icon: <Calendar className="w-5 h-5" /> },
-    { label: 'Projects Completed', value: '15+', icon: <Award className="w-5 h-5" /> },
-    { label: 'Technologies', value: '10+', icon: <Code className="w-5 h-5" /> },
-    { label: 'Students Taught', value: '20+', icon: <GraduationCap className="w-5 h-5" /> }
-  ];
-
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: { 
@@ -190,7 +183,7 @@ function AboutMe() {
               >
                 <p className="text-secondaryText dark:text-gray-300">
                   Hi, I'm <span className="font-semibold text-blue-600 dark:text-blue-400">Devv</span>, 
-                  a passionate freelance developer from Lucknow, India. I specialize in crafting modern, 
+                  a freelance developer from Lucknow, India. I specialize in crafting modern, 
                   scalable web applications with a focus on user experience and performance.
                 </p>
                 
@@ -209,31 +202,6 @@ function AboutMe() {
                   <Briefcase size={18} />
                   Open to Work
                 </motion.div>
-              </motion.div>
-
-              {/* Stats */}
-              <motion.div 
-                className="grid grid-cols-2 lg:grid-cols-4 gap-4 mt-8"
-                variants={containerVariants}
-              >
-                {stats.map((stat, index) => (
-                  <motion.div 
-                    key={index}
-                    className="bg-white/60 dark:bg-gray-800/60 backdrop-blur-sm p-4 rounded-xl border border-gray-200/50 dark:border-gray-700/50 text-center hover:bg-white/80 dark:hover:bg-gray-800/80 transition-all duration-300"
-                    variants={itemVariants}
-                    whileHover={{ y: -5, scale: 1.02 }}
-                  >
-                    <div className="flex justify-center mb-2 text-blue-500 dark:text-blue-400">
-                      {stat.icon}
-                    </div>
-                    <div className="font-bold text-2xl text-primaryText dark:text-white mb-1">
-                      {stat.value}
-                    </div>
-                    <div className="text-sm text-secondaryText dark:text-gray-400">
-                      {stat.label}
-                    </div>
-                  </motion.div>
-                ))}
               </motion.div>
             </motion.div>
           </motion.div>

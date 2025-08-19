@@ -9,7 +9,7 @@ import GetInTouch from './pages/GetInTouch.jsx';
 export const ThemeContext = createContext();
 
 function App() {
-  const [theme, setTheme] = useState('light');
+  const [theme, setTheme] = useState('dark');
 
   const toggleTheme = () => {
     setTheme((prev) => (prev === 'light' ? 'dark' : 'light'));
@@ -30,7 +30,7 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<AboutMe />} />
           <Route path="/projects" element={<Projects />} />
-          <Route path="/resume" element={<Resume />} />
+
           <Route path="/contact" element={<GetInTouch />} />
         </Routes>
       </Router>
