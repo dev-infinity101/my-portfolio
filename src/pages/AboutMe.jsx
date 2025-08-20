@@ -191,7 +191,7 @@ function AboutMe() {
                   I work primarily with <span className="font-semibold text-purple-600 dark:text-purple-400">Next.js</span>, 
                   <span className="font-semibold text-yellow-600 dark:text-yellow-400"> Python</span>, and sometimes 
                   dabble in <span className="font-semibold text-green-600 dark:text-green-400">GenAI</span>. 
-                  You can find me on Twitter, usually sharing insights about web development and occasionally posting about my latest projects.
+                  You can find me on Twitter, usually shitposting and occasionally posting Useful stuff too.
                 </p>
                 
                 <motion.div 
