@@ -42,3 +42,7 @@
 .neon-animate {
   animation: neon-pulse 5s infinite;
 }
+
+html {
+  overflow-y: scroll;
+}
