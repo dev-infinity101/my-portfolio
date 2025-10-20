@@ -39,6 +39,24 @@ body {
   }
 }
 
+.animated-gradient {
+  background: linear-gradient(-45deg, #f84d64, #b1fac7, #f3efcefa, #f56cee);
+  background-size: 400% 400%;
+  animation: fireFlare 10s ease infinite;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+}
+
+.dark .animated-gradient {
+  background: linear-gradient(-45deg, #000000, #1a1a1a, #333333, #121212);
+  background-size: 400% 400%;
+  animation: fireFlare 10s ease infinite;
+}
+
 @keyframes fireFlare {
   0% {
     background-position: 0% 50%;

@@ -2,22 +2,20 @@ import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import { ArrowLeft, Github, ExternalLink, Clock, CheckCircle, Star, Calendar, Code, Layers, Zap, Target, Sparkles } from 'lucide-react';
 
-// Enhanced project data with status and additional fields
+
 const projects = [
   {
     id: 1,
-    title: 'Resume AI',
+    title: 'Resume Genie',
     description: 'A sophisticated tool that optimizes resumes for job applications, using advanced AI to generate personalized cover letters and job descriptions tailored to specific roles.',
     techStack: ['Next.js', 'Python', 'MongoDB', 'Gemini API', 'TailwindCSS', 'Node.js'],
-    status: 'ongoing',
-    githubUrl: 'https://github.com/yourusername/resume-ai', // Replace with actual URL
-    liveUrl: 'https://resume-ai.vercel.app', // Replace with actual URL
+    status: 'completed',
+    githubUrl: 'https://github.com/dev-infinity101/Resume-genie', 
+    liveUrl: 'https://resume-genie-orpin.vercel.app/', 
     features: ['AI-powered resume optimization', 'Custom cover letter generation', 'ATS compatibility checker'],
-    startedDate: '2025-08-15',
-    expectedCompletion: '2025-09-15',
-    progress: 85,
+    completedDate: '2025-10-6',
     category: 'AI/ML',
-    image: 'https://images.unsplash.com/photo-1586281380349-632531db7ed4?w=800&h=400&fit=crop&crop=entropy&auto=format&q=80'
+    image: 'https://images.unsplash.com/photo-1602407294553-6ac9170b3ed0?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=1374'
   },
   {
     id: 2,
@@ -25,12 +23,12 @@ const projects = [
     description: 'An interactive AI-powered interview preparation platform that provides real-time feedback, personalized practice questions, and comprehensive performance analytics.',
     techStack: ['Next.js', 'Python', 'MongoDB', 'Gemini TTS/STT', 'Deepgram API', 'WebRTC'],
     status: 'ongoing',
-    githubUrl: 'https://github.com/yourusername/ai-interviewer', // Replace with actual URL
-    liveUrl: 'https://ai-interviewer.vercel.app', // Replace with actual URL
+    githubUrl: 'https://github.com/yourusername/ai-interviewer', 
+    liveUrl: 'https://ai-interviewer.vercel.app', 
     features: ['Real-time speech analysis', 'Personalized question generation', 'Performance tracking'],
     startedDate: '2025-04-30',
     expectedCompletion: '2025-09-30',
-    progress: 75,
+    progress: 50,
     category: 'AI/ML',
     image: 'https://images.unsplash.com/photo-1560472354-b33ff0c44a43?w=800&h=400&fit=crop&crop=entropy&auto=format&q=80'
   },
@@ -41,7 +39,7 @@ const projects = [
     techStack: ['Vite', 'React', 'Framer Motion', 'Tailwind CSS', 'JavaScript', 'Vercel'],
     status: 'completed',
     githubUrl: 'https://github.com/dev-infinity101/my-portfolio',
-    liveUrl: 'https://my-portfolio-phi.vercel.app/',
+    liveUrl: 'https://dev-ily.vercel.app/',
     features: ['Responsive design', 'Dark mode toggle', 'Smooth animations', 'SEO optimized'],
     completedDate: '2025-08-16',
     category: 'Web Development',
@@ -214,7 +212,7 @@ function ProjectCard({ project, index }) {
   const config = statusConfig[project.status];
 
   return (
-    <div className="group relative space-y-6">
+    <div className="group relative space-y-4">
       {/* Main Card Container */}
       <motion.div
         initial={{ opacity: 0, y: 60, scale: 0.95 }}
@@ -229,7 +227,7 @@ function ProjectCard({ project, index }) {
           transition: { duration: 0.3, ease: "easeOut" }
         }}
       >
-        <div className={`relative bg-white/70 dark:bg-slate-800/70 backdrop-blur-xl rounded-3xl border ${config.borderColor} shadow-xl hover:shadow-2xl transition-all duration-500 overflow-hidden`}>
+        <div className={`relative bg-white/70 dark:bg-slate-800/70 backdrop-blur-xl rounded-2xl border ${config.borderColor} shadow-xl hover:shadow-2xl transition-all duration-500 overflow-hidden`}>
           {/* Gradient Overlay */}
           <div className={`absolute inset-0 bg-gradient-to-br ${config.accentColor} opacity-0 group-hover:opacity-5 transition-opacity duration-500`}></div>
           
@@ -246,8 +244,8 @@ function ProjectCard({ project, index }) {
                 <div className="absolute inset-0 bg-gradient-to-br from-black/20 via-transparent to-black/30 group-hover:from-black/10 group-hover:to-black/20 transition-all duration-500"></div>
                 
                 {/* Floating Status Badge */}
-                <div className="absolute top-6 left-6">
-                  <div className={`flex items-center gap-2 px-4 py-2 ${config.bgColor} backdrop-blur-sm rounded-2xl border ${config.borderColor} shadow-lg`}>
+                <div className="absolute top-4 left-4">
+                  <div className={`flex items-center gap-2 px-3 py-1.5 ${config.bgColor} backdrop-blur-sm rounded-xl border ${config.borderColor} shadow-md`}>
                     <StatusIcon className={`w-4 h-4 ${config.color}`} />
                     <span className={`text-sm font-semibold ${config.color}`}>
                       {config.label}
@@ -257,15 +255,15 @@ function ProjectCard({ project, index }) {
 
                 {/* Progress Indicator for Ongoing Projects */}
                 {project.status === 'ongoing' && project.progress && (
-                  <div className="absolute bottom-6 left-6 right-6">
-                    <div className="bg-black/40 backdrop-blur-sm rounded-2xl p-4 border border-white/20">
-                      <div className="flex justify-between items-center text-white text-sm mb-2">
+<div className="absolute bottom-4 left-4 right-4">
+                    <div className="bg-black/40 backdrop-blur-sm rounded-xl p-3 border border-white/20"> 
+                      <div className="flex justify-between items-center text-white text-xs mb-1"> 
                         <span className="font-medium">Progress</span>
                         <span className="font-bold">{project.progress}%</span>
                       </div>
-                      <div className="w-full bg-white/20 rounded-full h-2.5">
+                      <div className="w-full bg-white/20 rounded-full h-2"> 
                         <motion.div 
-                          className={`h-2.5 rounded-full bg-gradient-to-r ${config.accentColor}`}
+                          className={`h-2 rounded-full bg-gradient-to-r ${config.accentColor}`}
                           initial={{ width: 0 }}
                           animate={{ width: `${project.progress}%` }}
                           transition={{ duration: 1.5, delay: 0.5, ease: "easeOut" }}
@@ -278,43 +276,43 @@ function ProjectCard({ project, index }) {
             </div>
 
             {/* Content Section */}
-            <div className="lg:col-span-3 p-8 lg:p-12">
+            <div className="lg:col-span-3 p-6 lg:p-8"> 
               {/* Header */}
-              <div className="flex items-start justify-between mb-6">
+              <div className="flex items-start justify-between mb-4"> 
                 <div className="flex-1">
-                  <div className="flex items-center gap-3 mb-3">
-                    <CategoryIcon className={`w-6 h-6 ${config.color}`} />
-                    <span className={`text-sm font-semibold ${config.color} uppercase tracking-wider`}>
+                  <div className="flex items-center gap-2 mb-2"> 
+                    <CategoryIcon className={`w-5 h-5 ${config.color}`} />
+                    <span className={`text-xs font-semibold ${config.color} uppercase tracking-wider`}> 
                       {project.category}
                     </span>
                   </div>
-                  <h3 className="text-3xl lg:text-4xl font-black text-slate-900 dark:text-white mb-4 group-hover:text-indigo-600 dark:group-hover:text-indigo-400 transition-colors duration-300">
+                  <h3 className="text-2xl lg:text-3xl font-black text-slate-900 dark:text-white mb-3 group-hover:text-indigo-600 dark:group-hover:text-indigo-400 transition-colors duration-300"> 
                     {project.title}
                   </h3>
                 </div>
-                <div className="text-6xl font-black text-slate-200/50 dark:text-slate-700/50">
+                <div className="text-5xl font-black text-slate-200/50 dark:text-slate-700/50"> 
                   {String(project.id).padStart(2, '0')}
                 </div>
               </div>
 
               {/* Description */}
-              <p className="text-lg text-slate-600 dark:text-slate-300 mb-8 leading-relaxed">
+              <p className="text-base text-slate-600 dark:text-slate-300 mb-6 leading-relaxed"> 
                 {project.description}
               </p>
 
               {/* Features & Tech Stack Grid */}
-              <div className="grid md:grid-cols-2 gap-8 mb-8">
+              <div className="grid md:grid-cols-2 gap-6 mb-6"> 
                 {/* Key Features */}
                 <div>
-                  <h4 className="text-lg font-bold text-slate-900 dark:text-white mb-4 flex items-center gap-2">
-                    <Star className={`w-5 h-5 ${config.color}`} />
+                  <h4 className="text-base font-bold text-slate-900 dark:text-white mb-3 flex items-center gap-1"> 
+                    <Star className={`w-4 h-4 ${config.color}`} /> 
                     Key Features
                   </h4>
-                  <ul className="space-y-3">
+                  <ul className="space-y-2"> 
                     {project.features.map((feature, i) => (
-                      <li key={i} className="flex items-start gap-3 text-slate-600 dark:text-slate-300">
-                        <div className={`w-2 h-2 rounded-full bg-gradient-to-r ${config.accentColor} mt-2 flex-shrink-0`} />
-                        <span className="leading-relaxed">{feature}</span>
+                      <li key={i} className="flex items-start gap-2 text-slate-600 dark:text-slate-300"> 
+                        <div className={`w-1.5 h-1.5 rounded-full bg-gradient-to-r ${config.accentColor} mt-2 flex-shrink-0`} />  
+                        <span className="leading-relaxed text-sm">{feature}</span> 
                       </li>
                     ))}
                   </ul>
@@ -322,18 +320,18 @@ function ProjectCard({ project, index }) {
 
                 {/* Tech Stack */}
                 <div>
-                  <h4 className="text-lg font-bold text-slate-900 dark:text-white mb-4 flex items-center gap-2">
-                    <Layers className={`w-5 h-5 ${config.color}`} />
+                  <h4 className="text-base font-bold text-slate-900 dark:text-white mb-3 flex items-center gap-1">
+                    <Layers className={`w-4 h-4 ${config.color}`} /> 
                     Tech Stack
                   </h4>
-                  <div className="flex flex-wrap gap-2">
+                  <div className="flex flex-wrap gap-1.5"> 
                     {project.techStack.map((tech, i) => (
                       <motion.span
                         key={i}
                         initial={{ opacity: 0, scale: 0.8 }}
                         animate={{ opacity: 1, scale: 1 }}
                         transition={{ duration: 0.3, delay: i * 0.1 }}
-                        className="px-3 py-2 bg-slate-100 dark:bg-slate-700 text-slate-700 dark:text-slate-300 text-sm rounded-xl font-medium hover:bg-slate-200 dark:hover:bg-slate-600 transition-colors cursor-default"
+                        className="px-2 py-1 bg-slate-100 dark:bg-slate-700 text-slate-700 dark:text-slate-300 text-xs rounded-lg font-medium hover:bg-slate-200 dark:hover:bg-slate-600 transition-colors cursor-default" 
                       >
                         {tech}
                       </motion.span>
@@ -343,15 +341,15 @@ function ProjectCard({ project, index }) {
               </div>
 
               {/* Timeline */}
-              <div className={`flex items-center gap-3 px-4 py-3 ${config.bgColor} rounded-2xl border ${config.borderColor} mb-6`}>
-                <Calendar className={`w-5 h-5 ${config.color}`} />
-                <div className="text-sm">
+              <div className={`flex items-center gap-2 px-3 py-2 ${config.bgColor} rounded-xl border ${config.borderColor} mb-4`}> 
+                <Calendar className={`w-4 h-4 ${config.color}`} /> 
+                <div className="text-xs">
                   {project.status === 'completed' ? (
                     <span className="text-slate-700 dark:text-slate-300">
                       Completed {new Date(project.completedDate).toLocaleDateString()}
                     </span>
                   ) : (
-                    <div className="space-y-1">
+                    <div className="space-y-0.5"> 
                       <div className="text-slate-600 dark:text-slate-400">
                         Started: {new Date(project.startedDate).toLocaleDateString()}
                       </div>
@@ -369,7 +367,7 @@ function ProjectCard({ project, index }) {
 
       {/* Action Buttons - Separate from card */}
       <motion.div 
-        className="flex justify-center gap-4"
+        className="flex justify-center gap-3" 
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ 
@@ -388,9 +386,9 @@ function ProjectCard({ project, index }) {
             target="_blank"
             rel="noopener noreferrer"
             style={{ pointerEvents: 'auto' }}
-            className="flex items-center justify-center gap-3 bg-slate-900 dark:bg-slate-700 text-white py-4 px-8 rounded-2xl hover:bg-slate-800 dark:hover:bg-slate-600 transition-all duration-300 text-sm font-semibold shadow-lg hover:shadow-xl border border-slate-800 dark:border-slate-600"
+            className="flex items-center justify-center gap-2 bg-slate-900 dark:bg-slate-700 text-white py-3 px-6 rounded-xl hover:bg-slate-800 dark:hover:bg-slate-600 transition-all duration-300 text-sm font-semibold shadow-lg hover:shadow-xl border border-slate-800 dark:border-slate-600"
           >
-            <Github className="w-5 h-5" />
+            <Github className="w-4 h-4" /> 
             View Code
           </a>
         </motion.div>
@@ -405,9 +403,9 @@ function ProjectCard({ project, index }) {
             target="_blank"
             rel="noopener noreferrer"
             style={{ pointerEvents: 'auto' }}
-            className={`flex items-center justify-center gap-3 bg-gradient-to-r ${config.accentColor} text-white py-4 px-8 rounded-2xl hover:shadow-xl transition-all duration-300 text-sm font-semibold shadow-lg border border-transparent`}
+            className={`flex items-center justify-center gap-2 bg-gradient-to-r ${config.accentColor} text-white py-3 px-6 rounded-xl hover:shadow-xl transition-all duration-300 text-sm font-semibold shadow-lg border border-transparent`} 
           >
-            <ExternalLink className="w-5 h-5" />
+            <ExternalLink className="w-4 h-4" /> 
             Live Demo
           </a>
         </motion.div>

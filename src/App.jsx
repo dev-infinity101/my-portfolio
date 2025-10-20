@@ -5,6 +5,7 @@ import AboutMe from './pages/AboutMe.jsx';
 import Projects from './pages/Projects.jsx';
 import Resume from './pages/Resume.jsx';
 import GetInTouch from './pages/GetInTouch.jsx';
+import AnimatedBackground from './components/AnimatedBackground';
 
 export const ThemeContext = createContext();
 
@@ -25,6 +26,7 @@ function App() {
 
   return (
     <ThemeContext.Provider value={{ theme, toggleTheme }}>
+      <AnimatedBackground />
       <Router>
         <Routes>
           <Route path="/" element={<Home />} />

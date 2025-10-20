@@ -110,7 +110,6 @@ const GetInTouch = () => {
 
   return (
     <div className="min-h-screen bg-gray-50 dark:bg-gray-900 py-20 px-4 relative overflow-hidden">
-      {/* Subtle texture overlay */}
       <div 
         className="absolute inset-0 pointer-events-none"
         style={{
@@ -121,7 +120,6 @@ const GetInTouch = () => {
       ></div>
 
       <div ref={ref} className="relative z-10 max-w-6xl mx-auto">
-        {/* Header Section */}
         <motion.div
           initial="hidden"
           animate={isInView ? 'visible' : 'hidden'}
@@ -138,14 +136,12 @@ const GetInTouch = () => {
           </motion.div>
         </motion.div>
 
-        {/* Main Content */}
         <motion.div
           initial="hidden"
           animate={isInView ? 'visible' : 'hidden'}
           variants={containerVariants}
           className="grid lg:grid-cols-2 gap-12"
         >
-          {/* Left Side - Form */}
           <motion.div 
             variants={itemVariants} 
             className="order-2 lg:order-1"
@@ -254,13 +250,11 @@ const GetInTouch = () => {
             </div>
           </motion.div>
 
-          {/* Right Side - Contact Info */}
           <motion.div 
             variants={itemVariants} 
             className="order-1 lg:order-2 space-y-8"
             whileHover={{ scale: 1.01, transition: { duration: 0.3 } }}
           >
-            {/* Contact Card */}
             <div className="bg-white dark:bg-gray-800 rounded-xl p-8 border border-gray-200 dark:border-gray-700 shadow-md">
               <div className="mb-8">
                 <div className="w-10 h-10 bg-indigo-50 dark:bg-indigo-900/50 rounded-md flex items-center justify-center mb-4">
@@ -272,7 +266,6 @@ const GetInTouch = () => {
                 </p>
               </div>
 
-              {/* Social Links */}
               <div className="space-y-4">
                 {socialLinks.map((social, index) => {
                   const IconComponent = social.icon;
@@ -303,7 +296,6 @@ const GetInTouch = () => {
               </div>
             </div>
 
-            {/* Availability Card */}
             <div className="bg-green-50 dark:bg-green-800/20 rounded-xl p-6 border border-green-100 dark:border-green-700/30">
               <div className="flex items-center gap-4">
                 <div className="w-3 h-3 bg-green-500 rounded-full shadow-md"></div>

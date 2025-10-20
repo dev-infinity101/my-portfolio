@@ -12,6 +12,10 @@
     text-rendering: optimizeLegibility;
   }
 
+  html {
+    overflow-y: scroll;
+  }
+
   body {
     @apply bg-gray-50 text-primaryText;
   }
@@ -41,8 +45,4 @@
 
 .neon-animate {
   animation: neon-pulse 5s infinite;
-}
-
-html {
-  overflow-y: scroll;
 }

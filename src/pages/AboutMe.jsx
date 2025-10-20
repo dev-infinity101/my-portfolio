@@ -312,21 +312,22 @@ function TimelineSection({ timelineItems }) {
       variants={containerVariants}
       initial="hidden"
       animate={inView ? "visible" : "hidden"}
+      className="mb-12" 
     >
-      <motion.div className="text-center mb-12" variants={itemVariants}>
-        <h2 className="text-4xl lg:text-5xl font-bold mb-4 bg-gradient-to-r from-gray-900 via-blue-600 to-purple-600 dark:from-white dark:via-blue-400 dark:to-purple-400 bg-clip-text text-transparent">
+      <motion.div className="text-center mb-8" variants={itemVariants}> 
+        <h2 className="text-3xl lg:text-4xl font-bold mb-3 bg-gradient-to-r from-gray-900 via-blue-600 to-purple-600 dark:from-white dark:via-blue-400 dark:to-purple-400 bg-clip-text text-transparent"> 
           Professional Journey
         </h2>
-        <p className="text-lg text-secondaryText dark:text-gray-300 max-w-2xl mx-auto">
+        <p className="text-base text-secondaryText dark:text-gray-300 max-w-xl mx-auto"> 
           My career path and the experiences that have shaped my professional growth
         </p>
       </motion.div>
 
       <div className="relative">
         {/* Timeline Line */}
-        <div className="absolute left-4 md:left-8 top-0 bottom-0 w-0.5 bg-gradient-to-b from-blue-500 via-purple-500 to-cyan-500 opacity-30"></div>
+        <div className="absolute left-3 md:left-4 top-0 bottom-0 w-0.5 bg-gradient-to-b from-blue-500 via-purple-500 to-cyan-500 opacity-30"></div> 
         
-        <div className="space-y-8">
+        <div className="space-y-6"> 
           {timelineItems.map((item, index) => (
             <TimelineItem key={index} item={item} index={index} />
           ))}
@@ -372,16 +373,16 @@ function TimelineItem({ item, index }) {
       variants={itemVariants}
       initial="hidden"
       animate={inView ? "visible" : "hidden"}
-      className="relative flex items-start gap-6 md:gap-8 group"
+      className="relative flex items-start gap-4 md:gap-6 group" 
     >
       {/* Timeline Dot */}
       <div className="relative z-10 flex-shrink-0">
         <motion.div 
-          className="w-8 h-8 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full border-4 border-white dark:border-gray-800 shadow-lg group-hover:scale-125 transition-transform duration-300"
+          className="w-6 h-6 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full border-3 border-white dark:border-gray-800 shadow-md group-hover:scale-125 transition-transform duration-300" 
           animate={{ 
             boxShadow: [
               "0 0 0 0 rgba(59, 130, 246, 0.4)",
-              "0 0 0 10px rgba(59, 130, 246, 0)",
+              "0 0 0 8px rgba(59, 130, 246, 0)", 
             ]
           }}
           transition={{ 
@@ -394,39 +395,39 @@ function TimelineItem({ item, index }) {
 
       {/* Content */}
       <motion.div 
-        className="flex-1 bg-white/70 dark:bg-gray-800/70 backdrop-blur-sm p-6 md:p-8 rounded-2xl shadow-lg border border-gray-200/50 dark:border-gray-700/50 hover:shadow-2xl transition-all duration-500 group-hover:bg-white/90 dark:group-hover:bg-gray-800/90"
-        whileHover={{ y: -5, scale: 1.01 }}
+        className="flex-1 bg-white/80 dark:bg-gray-800/80 backdrop-blur-md p-4 md:p-6 rounded-xl shadow-md border border-gray-200/50 dark:border-gray-700/50 hover:shadow-lg transition-all duration-300 group-hover:bg-white/90 dark:group-hover:bg-gray-800/90" 
+        whileHover={{ y: -3, scale: 1.01 }} 
       >
-        <div className="flex flex-wrap items-center gap-3 mb-4">
-          <h3 className="text-xl md:text-2xl font-bold text-primaryText dark:text-white group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors duration-300">
+        <div className="flex flex-wrap items-center gap-2 mb-3"> 
+          <h3 className="text-lg md:text-xl font-bold text-primaryText dark:text-white group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors duration-300"> 
             {item.company}
           </h3>
-          <span className={`px-3 py-1 text-xs font-semibold text-white rounded-full bg-gradient-to-r ${getTypeColor(item.type)} shadow-sm`}>
+          <span className={`px-2 py-0.5 text-xs font-semibold text-white rounded-full bg-gradient-to-r ${getTypeColor(item.type)} shadow-sm`}> 
             {getTypeLabel(item.type)}
           </span>
         </div>
         
-        <h4 className="text-lg md:text-xl font-semibold text-blue-600 dark:text-blue-400 mb-2">
+        <h4 className="text-base md:text-lg font-semibold text-blue-600 dark:text-blue-400 mb-1"> 
           {item.role}
         </h4>
         
-        <div className="flex items-center gap-2 text-sm text-gray-500 dark:text-gray-400 mb-4">
-          <Calendar size={16} />
+        <div className="flex items-center gap-1 text-xs text-gray-500 dark:text-gray-400 mb-3"> 
+          <Calendar size={14} /> 
           <span className="font-medium">{item.duration}</span>
         </div>
         
-        <p className="text-gray-700 dark:text-gray-200 mb-4 leading-relaxed">
+        <p className="text-gray-700 dark:text-gray-200 mb-3 text-sm leading-relaxed"> 
           {item.description}
         </p>
         
         {item.technologies && (
-          <div className="flex flex-wrap gap-2">
+          <div className="flex flex-wrap gap-1"> 
             {item.technologies.map((tech, techIndex) => (
               <motion.span
                 key={techIndex}
-                className="px-3 py-1 text-sm bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300 rounded-full font-medium hover:bg-blue-100 dark:hover:bg-blue-900/50 transition-colors duration-200"
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
+                className="px-2 py-0.5 text-xs bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300 rounded-lg font-medium hover:bg-blue-100 dark:hover:bg-blue-900/50 transition-colors duration-200" 
+                whileHover={{ scale: 1.03 }} 
+                whileTap={{ scale: 0.97 }} 
               >
                 {tech}
               </motion.span>
