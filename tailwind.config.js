@@ -10,7 +10,8 @@ export default {
   theme: {
     extend: {
       fontFamily: {
-        sans: ['Inter', ...defaultTheme.fontFamily.sans],
+        sans: ['"Geist Mono"', ...defaultTheme.fontFamily.sans],
+        mono: ['"Geist Mono"', ...defaultTheme.fontFamily.mono],
       },
       colors: {
         primaryText: '#000000',
@@ -19,6 +20,19 @@ export default {
         gradient2: '#E3FDFD',
         gradient3: '#FCE2CE',
         gradient4: '#DAD4EF',
+        // Dark mode palette
+        dark: {
+          bg: '#0B0B0B', // Primary Background: Deep Black / Charcoal
+          surface: '#1C1C1C', // Secondary Background: Slightly lighter black
+          text: {
+            primary: '#FFFFFF', // Primary Text: White
+            secondary: '#B5B5B5', // Secondary Text: Light Gray
+          },
+          accent: {
+            DEFAULT: '#00FF88', // Accent: Neon Green
+            hover: '#00D080', // Sub-accent: Muted Teal / Green Tint
+          }
+        },
         // Add these to ensure gray colors are available
         gray: {
           50: '#fafafa',
@@ -37,7 +51,8 @@ export default {
         'soft': '0 8px 32px rgba(0, 0, 0, 0.1)',
         'soft-hover': '0 12px 40px rgba(0, 0, 0, 0.12)',
         'neon-blue': "0 0 10px theme('colors.blue.400'), 0 0 20px theme('colors.blue.400'), 0 0 30px theme('colors.blue.400')",
-        'neon-dark': "0 0 10px rgba(110, 5, 114, 0.3), 0 0 20px rgba(110, 5, 114, 0.3), 0 0 30px rgba(110, 5, 114, 0.3)"
+        'neon-green': "0 0 10px #00FF88, 0 0 20px #00FF88, 0 0 30px #00FF88",
+        'neon-dark': "0 0 10px rgba(0, 255, 136, 0.3), 0 0 20px rgba(0, 255, 136, 0.3), 0 0 30px rgba(0, 255, 136, 0.3)"
       }
     },
   },

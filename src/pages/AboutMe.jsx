@@ -97,11 +97,11 @@ function AboutMe() {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-gray-50 via-white to-blue-50 dark:from-gray-900 dark:via-gray-800 dark:to-blue-900 text-primaryText dark:text-gray-200">
+    <div className="min-h-screen bg-gradient-to-br from-gray-50 via-white to-blue-50 dark:bg-none dark:bg-dark-bg text-primaryText dark:text-dark-text-primary">
       {/* Background Elements */}
       <div className="fixed inset-0 overflow-hidden pointer-events-none">
-        <div className="absolute -top-4 -right-4 w-72 h-72 bg-gradient-to-br from-blue-400/20 to-purple-400/20 rounded-full blur-3xl"></div>
-        <div className="absolute -bottom-4 -left-4 w-96 h-96 bg-gradient-to-tr from-cyan-400/20 to-blue-400/20 rounded-full blur-3xl"></div>
+        <div className="absolute -top-4 -right-4 w-72 h-72 bg-gradient-to-br from-blue-400/20 to-purple-400/20 rounded-full blur-3xl opacity-50 dark:opacity-20"></div>
+        <div className="absolute -bottom-4 -left-4 w-96 h-96 bg-gradient-to-tr from-cyan-400/20 to-blue-400/20 rounded-full blur-3xl opacity-50 dark:opacity-20"></div>
       </div>
 
       <div className="relative z-10 p-4 sm:p-6 lg:p-8">
@@ -113,7 +113,7 @@ function AboutMe() {
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.5 }}
           >
-            <Link to="/" className="inline-flex items-center gap-2 text-secondaryText dark:text-gray-400 hover:text-primaryText dark:hover:text-white transition-all duration-300 group">
+            <Link to="/" className="inline-flex items-center gap-2 text-secondaryText dark:text-dark-text-secondary hover:text-primaryText dark:hover:text-dark-accent transition-all duration-300 group">
               <ArrowLeft size={20} className="group-hover:-translate-x-1 transition-transform" />
               <span className="font-medium">Back to Home</span>
             </Link>
@@ -133,7 +133,7 @@ function AboutMe() {
             >
               <div className="relative group">
                 <motion.div 
-                  className="absolute -inset-4 bg-gradient-to-r from-blue-500 via-purple-500 to-cyan-500 rounded-2xl opacity-30 blur-xl group-hover:opacity-50 transition-opacity duration-500"
+                  className="absolute -inset-4 bg-gradient-to-r from-blue-500 via-purple-500 to-cyan-500 dark:from-dark-accent dark:via-emerald-500 dark:to-teal-500 rounded-2xl opacity-30 blur-xl group-hover:opacity-50 transition-opacity duration-500"
                   animate={{ 
                     scale: [1, 1.05, 1],
                     rotate: [0, 1, -1, 0]
@@ -147,7 +147,7 @@ function AboutMe() {
                 <motion.img 
                   src={profilePic} 
                   alt="Profile" 
-                  className="relative w-full max-w-sm h-auto rounded-2xl shadow-2xl object-cover border-4 border-white dark:border-gray-700 group-hover:scale-105 transition-transform duration-500"
+                  className="relative w-full max-w-sm h-auto rounded-2xl shadow-2xl object-cover border-4 border-white dark:border-dark-surface group-hover:scale-105 transition-transform duration-500"
                   whileHover={{ 
                     scale: 1.08,
                     rotate: 2,
@@ -160,7 +160,7 @@ function AboutMe() {
             {/* Right side: Introduction */}
             <motion.div className="lg:w-3/5" variants={itemVariants}>
               <motion.h1 
-                className="text-5xl sm:text-6xl lg:text-7xl font-bold mb-6 bg-gradient-to-r from-gray-900 via-blue-600 to-purple-600 dark:from-white dark:via-blue-400 dark:to-purple-400 bg-clip-text text-transparent leading-tight"
+                className="text-5xl sm:text-6xl lg:text-7xl font-bold mb-6 bg-gradient-to-r from-gray-900 via-blue-600 to-purple-600 dark:from-white dark:via-dark-accent dark:to-emerald-400 bg-clip-text text-transparent leading-tight"
                 variants={slideInVariants}
               >
                 About Me
@@ -170,23 +170,23 @@ function AboutMe() {
                 className="space-y-6 text-lg leading-relaxed"
                 variants={slideInVariants}
               >
-                <p className="text-secondaryText dark:text-gray-300">
-                  Hi, I'm <span className="font-semibold text-blue-600 dark:text-blue-400">Devv</span>, 
+                <p className="text-secondaryText dark:text-dark-text-secondary">
+                  Hi, I'm <span className="font-semibold text-blue-600 dark:text-dark-accent">Devv</span>, 
                   a freelance developer from Lucknow, India. I specialize in crafting modern, 
                   scalable web applications with a focus on user experience and performance.
                 </p>
                 
-                <p className="text-secondaryText dark:text-gray-300">
+                <p className="text-secondaryText dark:text-dark-text-secondary">
                   I work primarily with <span className="font-semibold text-purple-600 dark:text-purple-400">Next.js</span>, 
                   <span className="font-semibold text-yellow-600 dark:text-yellow-400"> Python</span>, and sometimes 
-                  dabble in <span className="font-semibold text-green-600 dark:text-green-400">GenAI</span>. 
+                  dabble in <span className="font-semibold text-green-600 dark:text-emerald-400">GenAI</span>. 
                   You can find me on Twitter, usually shitposting and occasionally posting Useful stuff too.
                 </p>
                 
                 <motion.div 
-                  className="inline-flex items-center gap-2 bg-gradient-to-r from-blue-500 to-purple-600 text-white px-6 py-3 rounded-full font-medium shadow-lg hover:shadow-xl transition-all duration-300"
-                  whileHover={{ scale: 1.05, y: -2 }}
-                  whileTap={{ scale: 0.95 }}
+                  className="inline-flex items-center gap-2 bg-[#00FF88] text-black px-6 py-3 rounded-none font-medium hover:bg-[#00D080] transition-all duration-300"
+                  whileHover={{ y: -2 }}
+                  whileTap={{ scale: 0.98 }}
                 >
                   <Briefcase size={18} />
                   Open to Work
@@ -236,10 +236,10 @@ function ExperiencesSection({ experiences }) {
       animate={inView ? "visible" : "hidden"}
     >
       <motion.div className="text-center mb-12" variants={itemVariants}>
-        <h2 className="text-4xl lg:text-5xl font-bold mb-4 bg-gradient-to-r from-gray-900 via-blue-600 to-purple-600 dark:from-white dark:via-blue-400 dark:to-purple-400 bg-clip-text text-transparent">
+        <h2 className="text-4xl lg:text-5xl font-bold mb-4 bg-gradient-to-r from-gray-900 via-blue-600 to-purple-600 dark:from-white dark:via-dark-accent dark:to-emerald-400 bg-clip-text text-transparent">
           My Experiences
         </h2>
-        <p className="text-lg text-secondaryText dark:text-gray-300 max-w-2xl mx-auto">
+        <p className="text-lg text-secondaryText dark:text-dark-text-secondary max-w-2xl mx-auto">
           A diverse range of experiences that shape my approach to development and problem-solving
         </p>
       </motion.div>
@@ -260,21 +260,21 @@ function ExperiencesSection({ experiences }) {
                  style={{ backgroundImage: `linear-gradient(to right, ${experience.color.split(' ')[1]}, ${experience.color.split(' ')[3]})` }}>
             </div>
             
-            <div className="relative bg-white/70 dark:bg-gray-800/70 backdrop-blur-sm p-8 rounded-2xl border border-gray-200/50 dark:border-gray-700/50 shadow-lg hover:shadow-2xl transition-all duration-500 h-full">
-              <div className={`inline-flex items-center justify-center w-16 h-16 rounded-2xl bg-gradient-to-r ${experience.color} text-white mb-6 shadow-lg group-hover:scale-110 transition-transform duration-300`}>
+            <div className="relative bg-white/70 dark:bg-dark-surface/90 backdrop-blur-sm p-8 rounded-none border border-gray-200/50 dark:border-dark-surface/50 shadow-lg hover:shadow-2xl transition-all duration-500 h-full">
+              <div className={`inline-flex items-center justify-center w-16 h-16 rounded-none bg-gradient-to-r ${experience.color} text-white mb-6 shadow-lg group-hover:scale-110 transition-transform duration-300`}>
                 {experience.icon}
               </div>
               
-              <h3 className="text-2xl font-bold text-primaryText dark:text-white mb-4 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors duration-300">
+              <h3 className="text-2xl font-bold text-primaryText dark:text-white mb-4 group-hover:text-blue-600 dark:group-hover:text-dark-accent transition-colors duration-300">
                 {experience.title}
               </h3>
               
-              <p className="text-secondaryText dark:text-gray-300 leading-relaxed">
+              <p className="text-secondaryText dark:text-dark-text-secondary leading-relaxed">
                 {experience.description}
               </p>
               
               <motion.div 
-                className="absolute bottom-4 right-4 w-2 h-2 bg-blue-500 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+                className="absolute bottom-4 right-4 w-2 h-2 bg-blue-500 dark:bg-dark-accent rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300"
                 animate={{ scale: [1, 1.5, 1] }}
                 transition={{ duration: 2, repeat: Infinity }}
               />
@@ -315,17 +315,17 @@ function TimelineSection({ timelineItems }) {
       className="mb-12" 
     >
       <motion.div className="text-center mb-8" variants={itemVariants}> 
-        <h2 className="text-3xl lg:text-4xl font-bold mb-3 bg-gradient-to-r from-gray-900 via-blue-600 to-purple-600 dark:from-white dark:via-blue-400 dark:to-purple-400 bg-clip-text text-transparent"> 
+        <h2 className="text-3xl lg:text-4xl font-bold mb-3 bg-gradient-to-r from-gray-900 via-blue-600 to-purple-600 dark:from-white dark:via-dark-accent dark:to-emerald-400 bg-clip-text text-transparent"> 
           Professional Journey
         </h2>
-        <p className="text-base text-secondaryText dark:text-gray-300 max-w-xl mx-auto"> 
+        <p className="text-base text-secondaryText dark:text-dark-text-secondary max-w-xl mx-auto"> 
           My career path and the experiences that have shaped my professional growth
         </p>
       </motion.div>
 
       <div className="relative">
         {/* Timeline Line */}
-        <div className="absolute left-3 md:left-4 top-0 bottom-0 w-0.5 bg-gradient-to-b from-blue-500 via-purple-500 to-cyan-500 opacity-30"></div> 
+        <div className="absolute left-3 md:left-4 top-0 bottom-0 w-0.5 bg-gradient-to-b from-blue-500 via-purple-500 to-cyan-500 dark:from-dark-accent dark:via-emerald-500 dark:to-teal-500 opacity-30"></div> 
         
         <div className="space-y-6"> 
           {timelineItems.map((item, index) => (
@@ -378,7 +378,7 @@ function TimelineItem({ item, index }) {
       {/* Timeline Dot */}
       <div className="relative z-10 flex-shrink-0">
         <motion.div 
-          className="w-6 h-6 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full border-3 border-white dark:border-gray-800 shadow-md group-hover:scale-125 transition-transform duration-300" 
+          className="w-6 h-6 bg-gradient-to-r from-blue-500 to-purple-500 dark:from-dark-accent dark:to-emerald-600 rounded-none border-3 border-white dark:border-dark-surface shadow-md group-hover:scale-125 transition-transform duration-300" 
           animate={{ 
             boxShadow: [
               "0 0 0 0 rgba(59, 130, 246, 0.4)",
@@ -395,28 +395,28 @@ function TimelineItem({ item, index }) {
 
       {/* Content */}
       <motion.div 
-        className="flex-1 bg-white/80 dark:bg-gray-800/80 backdrop-blur-md p-4 md:p-6 rounded-xl shadow-md border border-gray-200/50 dark:border-gray-700/50 hover:shadow-lg transition-all duration-300 group-hover:bg-white/90 dark:group-hover:bg-gray-800/90" 
+        className="flex-1 bg-white/80 dark:bg-dark-surface/90 backdrop-blur-md p-4 md:p-6 rounded-none shadow-md border border-gray-200/50 dark:border-dark-surface/50 hover:shadow-lg transition-all duration-300 group-hover:bg-white/90 dark:group-hover:bg-dark-surface" 
         whileHover={{ y: -3, scale: 1.01 }} 
       >
         <div className="flex flex-wrap items-center gap-2 mb-3"> 
-          <h3 className="text-lg md:text-xl font-bold text-primaryText dark:text-white group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors duration-300"> 
+          <h3 className="text-lg md:text-xl font-bold text-primaryText dark:text-white group-hover:text-blue-600 dark:group-hover:text-dark-accent transition-colors duration-300"> 
             {item.company}
           </h3>
-          <span className={`px-2 py-0.5 text-xs font-semibold text-white rounded-full bg-gradient-to-r ${getTypeColor(item.type)} shadow-sm`}> 
+          <span className={`px-2 py-0.5 text-xs font-semibold text-white rounded-none bg-gradient-to-r ${getTypeColor(item.type)} shadow-sm`}> 
             {getTypeLabel(item.type)}
           </span>
         </div>
         
-        <h4 className="text-base md:text-lg font-semibold text-blue-600 dark:text-blue-400 mb-1"> 
+        <h4 className="text-base md:text-lg font-semibold text-blue-600 dark:text-dark-accent mb-1"> 
           {item.role}
         </h4>
         
-        <div className="flex items-center gap-1 text-xs text-gray-500 dark:text-gray-400 mb-3"> 
+        <div className="flex items-center gap-1 text-xs text-gray-500 dark:text-dark-text-secondary mb-3"> 
           <Calendar size={14} /> 
           <span className="font-medium">{item.duration}</span>
         </div>
         
-        <p className="text-gray-700 dark:text-gray-200 mb-3 text-sm leading-relaxed"> 
+        <p className="text-gray-700 dark:text-dark-text-secondary mb-3 text-sm leading-relaxed"> 
           {item.description}
         </p>
         
@@ -425,7 +425,7 @@ function TimelineItem({ item, index }) {
             {item.technologies.map((tech, techIndex) => (
               <motion.span
                 key={techIndex}
-                className="px-2 py-0.5 text-xs bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300 rounded-lg font-medium hover:bg-blue-100 dark:hover:bg-blue-900/50 transition-colors duration-200" 
+                className="px-2 py-0.5 text-xs bg-gray-100 dark:bg-dark-bg text-gray-700 dark:text-dark-text-secondary rounded-none font-medium hover:bg-blue-100 dark:hover:bg-dark-accent/20 transition-colors duration-200" 
                 whileHover={{ scale: 1.03 }} 
                 whileTap={{ scale: 0.97 }} 
               >

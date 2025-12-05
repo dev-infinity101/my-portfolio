@@ -11,15 +11,17 @@ body {
 @media (min-width: 768px) {
   body {
     background: linear-gradient(-45deg, #f84d64, #b1fac7, #f3efcefa, #f56cee);
-    background-size: 400% 400%;
-    animation: fireFlare 10s ease infinite;
+    background-size: 100% 100%;
+    /* animation: fireFlare 10s ease infinite; */
     position: relative;
+    background-attachment: fixed;
   }
 
   .dark body {
-    background: linear-gradient(-45deg, #000000, #1a1a1a, #333333, #121212);
-    background-size: 400% 400%;
-    animation: fireFlare 10s ease infinite;
+    background: linear-gradient(to bottom right, #0B0B0B, #111111);
+    background-size: 100% 100%;
+    /* animation: fireFlare 10s ease infinite; */
+    background-attachment: fixed;
   }
 
   body::before {
@@ -30,19 +32,19 @@ body {
     width: 100%;
     height: 100%;
     background: radial-gradient(circle, rgba(252, 236, 193, 0.219) 0%, rgba(59, 59, 59, 0.295) 100%);
-    animation: flarePulse 5s ease-in-out infinite;
+    /* animation: flarePulse 5s ease-in-out infinite; */
     pointer-events: none;
   }
 
   .dark body::before {
-    background: radial-gradient(circle, rgba(110, 5, 114, 0.3) 0%, rgba(18,18,18,0.2) 100%);
+    background: radial-gradient(circle, rgba(0, 255, 136, 0.03) 0%, rgba(11, 11, 11, 0) 70%);
   }
 }
 
 .animated-gradient {
   background: linear-gradient(-45deg, #f84d64, #b1fac7, #f3efcefa, #f56cee);
-  background-size: 400% 400%;
-  animation: fireFlare 10s ease infinite;
+  background-size: 100% 100%;
+  /* animation: fireFlare 10s ease infinite; */
   position: fixed;
   top: 0;
   left: 0;
@@ -52,9 +54,9 @@ body {
 }
 
 .dark .animated-gradient {
-  background: linear-gradient(-45deg, #000000, #1a1a1a, #333333, #121212);
-  background-size: 400% 400%;
-  animation: fireFlare 10s ease infinite;
+  background: linear-gradient(to bottom right, #0B0B0B, #111111);
+  background-size: 100% 100%;
+  /* animation: fireFlare 10s ease infinite; */
 }
 
 @keyframes fireFlare {

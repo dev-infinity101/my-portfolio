@@ -1,12 +1,16 @@
-import { motion } from 'framer-motion';
+import { motion, AnimatePresence } from 'framer-motion';
+import { useState } from 'react';
 import Header from '../components/Header';
 import ProfileSection from '../components/ProfileSection';
 import SocialIcons from '../components/SocialIcons';
 import LinkButton from '../components/LinkButton';
 import Footer from '../components/Footer';
+import MatrixRain from '../components/MatrixRain';
 import projectIcon from '../assets/dev-smile.svg'; // profile pic
 
 function Home() {
+  const [showMatrix, setShowMatrix] = useState(true);
+
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
@@ -28,8 +32,21 @@ function Home() {
 
   return (
     <div className="min-h-screen flex flex-col items-center justify-center p-4 font-sans">
+      <AnimatePresence>
+        {showMatrix && (
+          <motion.div
+            initial={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 1 }}
+            className="fixed inset-0 z-50"
+          >
+            <MatrixRain onComplete={() => setShowMatrix(false)} />
+          </motion.div>
+        )}
+      </AnimatePresence>
+
       <motion.div
-        className="w-full max-w-md mx-auto bg-white/80 backdrop-blur-lg rounded-3xl shadow-soft p-6 text-center border border-white/20 dark:bg-gray-800/80 dark:border-gray-700"
+        className="w-full max-w-md mx-auto bg-white/80 backdrop-blur-lg rounded-3xl shadow-soft p-6 text-center border border-white/20 dark:bg-dark-surface/80 dark:border-white/10"
         variants={containerVariants}
         initial="hidden"
         animate="visible"

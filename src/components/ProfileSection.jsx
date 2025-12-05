@@ -14,12 +14,12 @@ function ProfileSection() {
         src={profilePic}
         alt="Profile of Dev Upadhyay"
         loading="lazy"
-        className={`w-34 h-32 md:w-36 md:h-36 rounded-full mx-auto object-cover border-4 border-white shadow-soft transition-all duration-300 ${theme === 'dark' ? 'neon-blue' : 'neon-dark'}`}
+        className={`w-34 h-32 md:w-36 md:h-36 rounded-full mx-auto object-cover border-4 border-white shadow-soft transition-all duration-300 ${theme === 'dark' ? 'neon-green' : 'neon-blue'}`}
       />
-      <h1 className="text-xl font-bold flex items-center gap-1.5 mt-4">
-        Devv <CheckCircle size={18} className="text-blue-500" aria-label="Verified" />
+      <h1 className="text-xl font-bold flex items-center gap-1.5 mt-4 dark:text-dark-text-primary">
+        Devv <CheckCircle size={18} className="text-blue-500 dark:text-dark-accent" aria-label="Verified" />
       </h1>
-      <p className="text-secondaryText text-sm text-balance">
+      <p className="text-secondaryText dark:text-dark-text-secondary text-sm text-balance">
          GenAI / FullStack developer
       </p>
     </section>

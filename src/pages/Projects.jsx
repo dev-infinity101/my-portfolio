@@ -99,7 +99,7 @@ function Projects() {
   const completedProjects = projects.filter(p => p.status === 'completed');
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-50 via-white to-slate-100 dark:from-slate-950 dark:via-slate-900 dark:to-slate-800">
+    <div className="min-h-screen bg-gradient-to-br from-slate-50 via-white to-slate-100 dark:bg-none dark:bg-dark-bg">
       <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:24px_24px]"></div>
       
       <div className="relative z-10 p-4 sm:p-6 lg:p-8">
@@ -111,7 +111,7 @@ function Projects() {
             transition={{ duration: 0.5 }}
             className="mb-12"
           >
-            <Link to="/" className="inline-flex items-center gap-2 text-slate-600 dark:text-slate-400 hover:text-indigo-600 dark:hover:text-indigo-400 transition-all duration-300 group">
+            <Link to="/" className="inline-flex items-center gap-2 text-slate-600 dark:text-dark-text-secondary hover:text-indigo-600 dark:hover:text-dark-accent transition-all duration-300 group">
               <ArrowLeft size={20} className="group-hover:-translate-x-1 transition-transform duration-300" />
               <span className="font-medium">Back to Home</span>
             </Link>
@@ -125,17 +125,17 @@ function Projects() {
             transition={{ duration: 0.8, ease: "easeOut" }}
           >
             <motion.div
-              className="inline-flex items-center gap-3 mb-6 px-6 py-3 bg-gradient-to-r from-indigo-500/10 to-purple-500/10 dark:from-indigo-500/20 dark:to-purple-500/20 rounded-full border border-indigo-200/50 dark:border-indigo-700/50"
+              className="inline-flex items-center gap-3 mb-6 px-6 py-3 bg-gradient-to-r from-indigo-500/10 to-purple-500/10 dark:from-dark-accent/20 dark:to-emerald-500/20 rounded-full border border-indigo-200/50 dark:border-dark-accent/30"
               initial={{ opacity: 0, scale: 0.8 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.6, delay: 0.1 }}
             >
-              <Sparkles className="w-5 h-5 text-indigo-600 dark:text-indigo-400" />
-              <span className="text-sm font-medium text-slate-700 dark:text-slate-300">Featured Work</span>
+              <Sparkles className="w-5 h-5 text-indigo-600 dark:text-dark-accent" />
+              <span className="text-sm font-medium text-slate-700 dark:text-dark-text-primary">Featured Work</span>
             </motion.div>
 
             <motion.h1
-              className="text-5xl md:text-7xl lg:text-8xl font-black mb-6 bg-gradient-to-r from-slate-900 via-indigo-900 to-purple-900 dark:from-slate-100 dark:via-indigo-100 dark:to-purple-100 bg-clip-text text-transparent"
+              className="text-5xl md:text-7xl lg:text-8xl font-black mb-6 bg-gradient-to-r from-slate-900 via-indigo-900 to-purple-900 dark:from-white dark:via-dark-accent dark:to-emerald-400 bg-clip-text text-transparent"
               initial={{ opacity: 0, scale: 0.8 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.8, delay: 0.2 }}
@@ -144,7 +144,7 @@ function Projects() {
             </motion.h1>
             
             <motion.p
-              className="text-xl md:text-2xl text-slate-600 dark:text-slate-300 max-w-3xl mx-auto leading-relaxed"
+              className="text-xl md:text-2xl text-slate-600 dark:text-dark-text-secondary max-w-3xl mx-auto leading-relaxed"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.4 }}
@@ -163,7 +163,7 @@ function Projects() {
             {/* Ongoing Projects Section */}
             <motion.div variants={sectionVariants}>
               <div className="flex items-center gap-4 mb-8">
-                <div className="flex items-center gap-3 px-6 py-3 bg-gradient-to-r from-amber-500/10 to-orange-500/10 dark:from-amber-500/20 dark:to-orange-500/20 rounded-2xl border border-amber-200/50 dark:border-amber-700/50">
+                <div className="flex items-center justify-center gap-2 bg-transparent text-slate-900 dark:text-white py-3 px-6 rounded-none hover:bg-slate-100 dark:hover:bg-white/10 transition-all duration-300 text-sm font-semibold border border-slate-900 dark:border-white">
                   <Clock className="w-6 h-6 text-amber-600 dark:text-amber-400" />
                   <h2 className="text-2xl font-bold text-slate-900 dark:text-white">In Progress</h2>
                   <div className="px-3 py-1 bg-amber-600/20 dark:bg-amber-400/20 rounded-full">
@@ -183,14 +183,14 @@ function Projects() {
             {/* Completed Projects Section */}
             <motion.div variants={sectionVariants}>
               <div className="flex items-center gap-4 mb-8">
-                <div className="flex items-center gap-3 px-6 py-3 bg-gradient-to-r from-emerald-500/10 to-teal-500/10 dark:from-emerald-500/20 dark:to-teal-500/20 rounded-2xl border border-emerald-200/50 dark:border-emerald-700/50">
-                  <CheckCircle className="w-6 h-6 text-emerald-600 dark:text-emerald-400" />
+                <div className="flex items-center gap-3 px-6 py-3 bg-gradient-to-r from-emerald-500/10 to-teal-500/10 dark:from-dark-accent/20 dark:to-emerald-500/20 rounded-2xl border border-emerald-200/50 dark:border-dark-accent/30">
+                  <CheckCircle className="w-6 h-6 text-emerald-600 dark:text-dark-accent" />
                   <h2 className="text-2xl font-bold text-slate-900 dark:text-white">Completed</h2>
-                  <div className="px-3 py-1 bg-emerald-600/20 dark:bg-emerald-400/20 rounded-full">
-                    <span className="text-sm font-bold text-emerald-700 dark:text-emerald-300">{completedProjects.length}</span>
+                  <div className="px-3 py-1 bg-emerald-600/20 dark:bg-dark-accent/20 rounded-full">
+                    <span className="text-sm font-bold text-emerald-700 dark:text-dark-accent">{completedProjects.length}</span>
                   </div>
                 </div>
-                <div className="flex-1 h-px bg-gradient-to-r from-emerald-300/50 to-transparent"></div>
+                <div className="flex-1 h-px bg-gradient-to-r from-emerald-300/50 to-transparent dark:from-dark-accent/30"></div>
               </div>
               
               <div className="grid gap-8">
@@ -227,7 +227,7 @@ function ProjectCard({ project, index }) {
           transition: { duration: 0.3, ease: "easeOut" }
         }}
       >
-        <div className={`relative bg-white/70 dark:bg-slate-800/70 backdrop-blur-xl rounded-2xl border ${config.borderColor} shadow-xl hover:shadow-2xl transition-all duration-500 overflow-hidden`}>
+        <div className={`relative bg-white/70 dark:bg-dark-surface/90 backdrop-blur-xl rounded-none border ${config.borderColor} dark:border-dark-surface/50 shadow-xl hover:shadow-2xl transition-all duration-500 overflow-hidden`}>
           {/* Gradient Overlay */}
           <div className={`absolute inset-0 bg-gradient-to-br ${config.accentColor} opacity-0 group-hover:opacity-5 transition-opacity duration-500`}></div>
           
@@ -245,7 +245,7 @@ function ProjectCard({ project, index }) {
                 
                 {/* Floating Status Badge */}
                 <div className="absolute top-4 left-4">
-                  <div className={`flex items-center gap-2 px-3 py-1.5 ${config.bgColor} backdrop-blur-sm rounded-xl border ${config.borderColor} shadow-md`}>
+                  <div className={`flex items-center gap-2 px-3 py-1.5 ${config.bgColor} backdrop-blur-sm rounded-none border ${config.borderColor} shadow-md`}>
                     <StatusIcon className={`w-4 h-4 ${config.color}`} />
                     <span className={`text-sm font-semibold ${config.color}`}>
                       {config.label}
@@ -255,15 +255,15 @@ function ProjectCard({ project, index }) {
 
                 {/* Progress Indicator for Ongoing Projects */}
                 {project.status === 'ongoing' && project.progress && (
-<div className="absolute bottom-4 left-4 right-4">
-                    <div className="bg-black/40 backdrop-blur-sm rounded-xl p-3 border border-white/20"> 
+                  <div className="absolute bottom-4 left-4 right-4">
+                    <div className="bg-black/40 backdrop-blur-sm rounded-none p-3 border border-white/20"> 
                       <div className="flex justify-between items-center text-white text-xs mb-1"> 
                         <span className="font-medium">Progress</span>
                         <span className="font-bold">{project.progress}%</span>
                       </div>
-                      <div className="w-full bg-white/20 rounded-full h-2"> 
+                      <div className="w-full bg-white/20 rounded-none h-2"> 
                         <motion.div 
-                          className={`h-2 rounded-full bg-gradient-to-r ${config.accentColor}`}
+                          className={`h-2 rounded-none bg-gradient-to-r ${config.accentColor}`}
                           initial={{ width: 0 }}
                           animate={{ width: `${project.progress}%` }}
                           transition={{ duration: 1.5, delay: 0.5, ease: "easeOut" }}
@@ -286,17 +286,17 @@ function ProjectCard({ project, index }) {
                       {project.category}
                     </span>
                   </div>
-                  <h3 className="text-2xl lg:text-3xl font-black text-slate-900 dark:text-white mb-3 group-hover:text-indigo-600 dark:group-hover:text-indigo-400 transition-colors duration-300"> 
+                  <h3 className="text-2xl lg:text-3xl font-black text-slate-900 dark:text-white mb-3 group-hover:text-indigo-600 dark:group-hover:text-dark-accent transition-colors duration-300"> 
                     {project.title}
                   </h3>
                 </div>
-                <div className="text-5xl font-black text-slate-200/50 dark:text-slate-700/50"> 
+                <div className="text-5xl font-black text-slate-200/50 dark:text-dark-surface"> 
                   {String(project.id).padStart(2, '0')}
                 </div>
               </div>
 
               {/* Description */}
-              <p className="text-base text-slate-600 dark:text-slate-300 mb-6 leading-relaxed"> 
+              <p className="text-base text-slate-600 dark:text-dark-text-secondary mb-6 leading-relaxed"> 
                 {project.description}
               </p>
 
@@ -310,8 +310,8 @@ function ProjectCard({ project, index }) {
                   </h4>
                   <ul className="space-y-2"> 
                     {project.features.map((feature, i) => (
-                      <li key={i} className="flex items-start gap-2 text-slate-600 dark:text-slate-300"> 
-                        <div className={`w-1.5 h-1.5 rounded-full bg-gradient-to-r ${config.accentColor} mt-2 flex-shrink-0`} />  
+                      <li key={i} className="flex items-start gap-2 text-slate-600 dark:text-dark-text-secondary"> 
+                        <div className={`w-1.5 h-1.5 rounded-none bg-gradient-to-r ${config.accentColor} mt-2 flex-shrink-0`} />  
                         <span className="leading-relaxed text-sm">{feature}</span> 
                       </li>
                     ))}
@@ -331,7 +331,7 @@ function ProjectCard({ project, index }) {
                         initial={{ opacity: 0, scale: 0.8 }}
                         animate={{ opacity: 1, scale: 1 }}
                         transition={{ duration: 0.3, delay: i * 0.1 }}
-                        className="px-2 py-1 bg-slate-100 dark:bg-slate-700 text-slate-700 dark:text-slate-300 text-xs rounded-lg font-medium hover:bg-slate-200 dark:hover:bg-slate-600 transition-colors cursor-default" 
+                        className="px-2 py-1 bg-slate-100 dark:bg-dark-bg text-slate-700 dark:text-dark-text-secondary text-xs rounded-none font-medium hover:bg-slate-200 dark:hover:bg-dark-surface transition-colors cursor-default" 
                       >
                         {tech}
                       </motion.span>
@@ -341,7 +341,7 @@ function ProjectCard({ project, index }) {
               </div>
 
               {/* Timeline */}
-              <div className={`flex items-center gap-2 px-3 py-2 ${config.bgColor} rounded-xl border ${config.borderColor} mb-4`}> 
+              <div className={`flex items-center gap-2 px-3 py-2 ${config.bgColor} rounded-none border ${config.borderColor} mb-4`}> 
                 <Calendar className={`w-4 h-4 ${config.color}`} /> 
                 <div className="text-xs">
                   {project.status === 'completed' ? (
@@ -377,8 +377,8 @@ function ProjectCard({ project, index }) {
         }}
       >
         <motion.div
-          whileHover={{ scale: 1.05, y: -2 }}
-          whileTap={{ scale: 0.95 }}
+          whileHover={{ y: -2 }}
+          whileTap={{ scale: 0.98 }}
           transition={{ duration: 0.2 }}
         >
           <a
@@ -386,7 +386,7 @@ function ProjectCard({ project, index }) {
             target="_blank"
             rel="noopener noreferrer"
             style={{ pointerEvents: 'auto' }}
-            className="flex items-center justify-center gap-2 bg-slate-900 dark:bg-slate-700 text-white py-3 px-6 rounded-xl hover:bg-slate-800 dark:hover:bg-slate-600 transition-all duration-300 text-sm font-semibold shadow-lg hover:shadow-xl border border-slate-800 dark:border-slate-600"
+            className="flex items-center justify-center gap-2 bg-transparent text-slate-900 dark:text-white py-3 px-6 rounded-none hover:bg-slate-100 dark:hover:bg-white/10 transition-all duration-300 text-sm font-semibold border border-slate-900 dark:border-white"
           >
             <Github className="w-4 h-4" /> 
             View Code
@@ -394,8 +394,8 @@ function ProjectCard({ project, index }) {
         </motion.div>
         
         <motion.div
-          whileHover={{ scale: 1.05, y: -2 }}
-          whileTap={{ scale: 0.95 }}
+          whileHover={{ y: -2 }}
+          whileTap={{ scale: 0.98 }}
           transition={{ duration: 0.2 }}
         >
           <a
@@ -403,9 +403,9 @@ function ProjectCard({ project, index }) {
             target="_blank"
             rel="noopener noreferrer"
             style={{ pointerEvents: 'auto' }}
-            className={`flex items-center justify-center gap-2 bg-gradient-to-r ${config.accentColor} text-white py-3 px-6 rounded-xl hover:shadow-xl transition-all duration-300 text-sm font-semibold shadow-lg border border-transparent`} 
+            className="flex items-center justify-center gap-2 bg-[#00FF88] text-black py-3 px-6 rounded-none hover:bg-[#00D080] transition-all duration-300 text-sm font-semibold border border-transparent"
           >
-            <ExternalLink className="w-4 h-4" /> 
+            <ExternalLink className="w-4 h-4" />
             Live Demo
           </a>
         </motion.div>
