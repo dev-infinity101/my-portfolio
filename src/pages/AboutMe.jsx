@@ -171,7 +171,7 @@ function AboutMe() {
                 variants={slideInVariants}
               >
                 <p className="text-secondaryText dark:text-dark-text-secondary">
-                  Hi, I'm <span className="font-semibold text-blue-600 dark:text-dark-accent">Devv</span>, 
+                  Hi, I'm <span className="font-semibold text-blue-600 dark:text-dark-accent">Prabodh AKA DEV on Twitter</span>, 
                   a freelance developer from Lucknow, India. I specialize in crafting modern, 
                   scalable web applications with a focus on user experience and performance.
                 </p>

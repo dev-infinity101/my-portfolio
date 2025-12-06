@@ -15,7 +15,7 @@ function SocialIcons() {
           href={url}
           target="_blank"
           rel="noopener noreferrer"
-          className="text-primaryText hover:text-secondaryText transition-colors duration-300 ease-in-out"
+          className="text-gray-800 dark:text-white hover:text-[#00FF88] dark:hover:text-[#00FF88] transition-colors duration-300 ease-in-out"
           aria-label={label}
         >
           <Icon size={24} />
