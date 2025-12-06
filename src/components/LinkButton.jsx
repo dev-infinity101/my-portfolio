@@ -9,7 +9,7 @@ function LinkButton({ to, href, imageUrl, variant = 'outline', children }) {
   
   const variants = {
     filled: "bg-[#00FF88] text-black border-transparent hover:bg-[#00D080]",
-    outline: "bg-transparent text-primaryText dark:text-white border-gray-200 dark:border-white hover:bg-gray-50 dark:hover:bg-white/10 hover:border-gray-400 dark:hover:border-white"
+    outline: "bg-transparent text-primaryText dark:text-white border-gray-200 dark:border-gray-600 hover:bg-gray-50 dark:hover:bg-white/10 hover:border-gray-400 dark:hover:border-white"
   };
 
   const props = {
