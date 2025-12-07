@@ -6,6 +6,7 @@ import Projects from './pages/Projects.jsx';
 import Resume from './pages/Resume.jsx';
 import GetInTouch from './pages/GetInTouch.jsx';
 import AnimatedBackground from './components/AnimatedBackground';
+import AutoPlayAudio from './components/AutoPlayAudio.jsx';
 
 export const ThemeContext = createContext();
 
@@ -24,9 +25,26 @@ function App() {
     }
   }, [theme]);
 
+  useEffect(() => {
+    const handler = (e) => {
+      const el = e.target.closest('.glow-outline');
+      if (!el) return;
+      const rect = el.getBoundingClientRect();
+      const x = e.clientX - rect.left;
+      const y = e.clientY - rect.top;
+      el.style.setProperty('--x', x + 'px');
+      el.style.setProperty('--y', y + 'px');
+    };
+    window.addEventListener('mousemove', handler, { passive: true });
+    return () => {
+      window.removeEventListener('mousemove', handler);
+    };
+  }, []);
+
   return (
     <ThemeContext.Provider value={{ theme, toggleTheme }}>
       <AnimatedBackground />
+      <AutoPlayAudio volume={0.08} />
       <Router>
         <Routes>
           <Route path="/" element={<Home />} />

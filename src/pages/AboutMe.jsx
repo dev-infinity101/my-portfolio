@@ -184,7 +184,7 @@ function AboutMe() {
                 </p>
                 
                 <motion.div 
-                  className="inline-flex items-center gap-2 bg-[#00FF88] text-black px-6 py-3 rounded-none font-medium hover:bg-[#00D080] transition-all duration-300"
+                  className="inline-flex items-center gap-2 bg-[#00FF88] text-black px-6 py-3 rounded-none font-medium hover:bg-[#00D080] transition-all duration-300 glow-outline border border-transparent"
                   whileHover={{ y: -2 }}
                   whileTap={{ scale: 0.98 }}
                 >
@@ -260,7 +260,7 @@ function ExperiencesSection({ experiences }) {
                  style={{ backgroundImage: `linear-gradient(to right, ${experience.color.split(' ')[1]}, ${experience.color.split(' ')[3]})` }}>
             </div>
             
-            <div className="relative bg-white/70 dark:bg-dark-surface/90 backdrop-blur-sm p-8 rounded-none border border-gray-200/50 dark:border-dark-surface/50 shadow-lg hover:shadow-2xl transition-all duration-500 h-full">
+            <div className="relative bg-white/70 dark:bg-dark-surface/90 backdrop-blur-sm p-8 rounded-none border border-gray-200/50 dark:border-dark-surface/50 shadow-lg hover:shadow-2xl transition-all duration-500 h-full glow-outline">
               <div className={`inline-flex items-center justify-center w-16 h-16 rounded-none bg-gradient-to-r ${experience.color} text-white mb-6 shadow-lg group-hover:scale-110 transition-transform duration-300`}>
                 {experience.icon}
               </div>
@@ -395,7 +395,7 @@ function TimelineItem({ item, index }) {
 
       {/* Content */}
       <motion.div 
-        className="flex-1 bg-white/80 dark:bg-dark-surface/90 backdrop-blur-md p-4 md:p-6 rounded-none shadow-md border border-gray-200/50 dark:border-dark-surface/50 hover:shadow-lg transition-all duration-300 group-hover:bg-white/90 dark:group-hover:bg-dark-surface" 
+        className="flex-1 bg-white/80 dark:bg-dark-surface/90 backdrop-blur-md p-4 md:p-6 rounded-none shadow-md border border-gray-200/50 dark:border-dark-surface/50 hover:shadow-lg transition-all duration-300 group-hover:bg-white/90 dark:group-hover:bg-dark-surface glow-outline" 
         whileHover={{ y: -3, scale: 1.01 }} 
       >
         <div className="flex flex-wrap items-center gap-2 mb-3"> 

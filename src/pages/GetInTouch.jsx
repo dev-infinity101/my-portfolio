@@ -75,7 +75,7 @@ const GetInTouch = () => {
     }
   };
 
-  const inputClass = "block w-full rounded-md border py-3 px-4 bg-white/50 dark:bg-gray-800/50 text-gray-900 dark:text-white placeholder-gray-400 dark:placeholder-gray-500 focus:ring-1 focus:ring-indigo-500 focus:border-indigo-500 transition-all duration-300 border-gray-200 dark:border-gray-700 shadow-sm";
+  const inputClass = "block w-full rounded-none border py-3 px-4 bg-[#1C1C1C] text-[#FFFFFF] placeholder-[#B5B5B5] focus:ring-1 focus:ring-[#00FF88] focus:border-[#00FF88] transition-all duration-300 border-[#2A2A2A] shadow-sm";
 
   const socialLinks = [
     {
@@ -109,7 +109,7 @@ const GetInTouch = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-gray-50 dark:bg-gray-900 py-20 px-4 relative overflow-hidden">
+    <div className="min-h-screen bg-[linear-gradient(to_bottom_right,#0B0B0B,#111111)] text-white py-20 px-4 relative overflow-hidden">
       <div 
         className="absolute inset-0 pointer-events-none"
         style={{
@@ -127,10 +127,10 @@ const GetInTouch = () => {
           className="text-center mb-16"
         >
           <motion.div variants={itemVariants} className="mb-8">
-            <h1 className="text-5xl md:text-6xl font-semibold mb-4 text-gray-900 dark:text-white tracking-tight">
+            <h1 className="text-5xl md:text-6xl font-semibold mb-4 text-white tracking-tight">
               Get In Touch
             </h1>
-            <p className="text-lg text-gray-600 dark:text-gray-300 max-w-2xl mx-auto leading-relaxed">
+            <p className="text-lg text-[#B5B5B5] max-w-2xl mx-auto leading-relaxed">
               I'm here to discuss your project needs and explore how we can work together to achieve outstanding results.
             </p>
           </motion.div>
@@ -147,14 +147,14 @@ const GetInTouch = () => {
             className="order-2 lg:order-1"
             whileHover={{ scale: 1.01, transition: { duration: 0.3 } }}
           >
-            <div className="bg-white dark:bg-gray-800 rounded-xl p-8 border border-gray-200 dark:border-gray-700 shadow-md">
+            <div className="bg-[#1C1C1C] rounded-none p-8 border border-[#2A2A2A] shadow-md glow-outline">
               <div className="flex items-center gap-3 mb-8">
-                <div className="w-10 h-10 bg-indigo-50 dark:bg-indigo-900/50 rounded-md flex items-center justify-center">
-                  <Send size={20} className="text-indigo-600 dark:text-indigo-400" />
+                <div className="w-10 h-10 bg-[#00FF881A] rounded-none flex items-center justify-center">
+                  <Send size={20} className="text-[#00FF88]" />
                 </div>
                 <div>
-                  <h2 className="text-2xl font-semibold text-gray-900 dark:text-white">Send a Message</h2>
-                  <p className="text-sm text-gray-500 dark:text-gray-400 mt-1">Expect a response within one business day.</p>
+                  <h2 className="text-2xl font-semibold text-white">Send a Message</h2>
+                  <p className="text-sm text-[#B5B5B5] mt-1">Expect a response within one business day.</p>
                 </div>
               </div>
               
@@ -229,7 +229,7 @@ const GetInTouch = () => {
                   whileTap={{ scale: 0.98 }}
                   type="submit"
                   disabled={isSubmitting}
-                  className="w-full bg-gradient-to-r from-orange-400 to-orange-600 text-white font-medium py-3 px-6 rounded-md hover:from-orange-500 hover:to-orange-700 transition-colors duration-300 disabled:opacity-50 flex items-center justify-center gap-2 shadow-sm"
+                  className="w-full bg-[#00FF88] text-black font-medium py-3 px-6 rounded-none hover:bg-[#00D080] transition-colors duration-300 disabled:opacity-50 flex items-center justify-center gap-2 border border-transparent glow-outline"
                 >
                   {isSubmitting ? 'Sending...' : 'Send Message'}
                   <ArrowRight size={16} />
@@ -255,13 +255,13 @@ const GetInTouch = () => {
             className="order-1 lg:order-2 space-y-8"
             whileHover={{ scale: 1.01, transition: { duration: 0.3 } }}
           >
-            <div className="bg-white dark:bg-gray-800 rounded-xl p-8 border border-gray-200 dark:border-gray-700 shadow-md">
+            <div className="bg-[#1C1C1C] rounded-none p-8 border border-[#2A2A2A] shadow-md glow-outline">
               <div className="mb-8">
-                <div className="w-10 h-10 bg-indigo-50 dark:bg-indigo-900/50 rounded-md flex items-center justify-center mb-4">
-                  <MapPin size={20} className="text-indigo-600 dark:text-indigo-400" />
+                <div className="w-10 h-10 bg-[#00FF881A] rounded-none flex items-center justify-center mb-4">
+                  <MapPin size={20} className="text-[#00FF88]" />
                 </div>
-                <h3 className="text-2xl font-semibold text-gray-900 dark:text-white mb-3">Connect With Me</h3>
-                <p className="text-gray-600 dark:text-gray-300 text-base leading-relaxed">
+                <h3 className="text-2xl font-semibold text-white mb-3">Connect With Me</h3>
+                <p className="text-[#B5B5B5] text-base leading-relaxed">
                   I'm eager to discuss potential collaborations and how my expertise can support your goals. Feel free to connect via any channel below.
                 </p>
               </div>
@@ -275,17 +275,17 @@ const GetInTouch = () => {
                       href={social.href}
                       target={social.href.startsWith('http') ? '_blank' : '_self'}
                       rel={social.href.startsWith('http') ? 'noopener noreferrer' : ''}
-                      className="flex items-center gap-4 p-3 rounded-md hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors duration-300"
+                      className="flex items-center gap-4 p-3 rounded-none hover:bg-[#1C1C1C] transition-colors duration-300"
                       whileHover={{ x: 4 }}
                     >
-                      <div className={`w-8 h-8 flex items-center justify-center ${social.color}`}>
+                      <div className={`w-8 h-8 flex items-center justify-center text-[#00FF88]`}>
                         <IconComponent size={20} />
                       </div>
                       <div className="flex-1">
-                        <div className="font-medium text-gray-900 dark:text-white text-base">
+                        <div className="font-medium text-white text-base">
                           {social.label}
                         </div>
-                        <div className="text-sm text-gray-500 dark:text-gray-400">
+                        <div className="text-sm text-[#B5B5B5]">
                           {social.value}
                         </div>
                       </div>
@@ -296,12 +296,12 @@ const GetInTouch = () => {
               </div>
             </div>
 
-            <div className="bg-green-50 dark:bg-green-800/20 rounded-xl p-6 border border-green-100 dark:border-green-700/30">
+            <div className="bg-[#00D0801A] rounded-none p-6 border border-[#2A2A2A] glow-outline">
               <div className="flex items-center gap-4">
-                <div className="w-3 h-3 bg-green-500 rounded-full shadow-md"></div>
+                <div className="w-3 h-3 bg-[#00FF88] rounded-none shadow-md"></div>
                 <div>
-                  <p className="font-medium text-green-800 dark:text-green-200 text-base">Open to New Opportunities</p>
-                  <p className="text-green-700 dark:text-green-300 text-sm mt-1">Accepting freelance projects • Available for remote and on-site work</p>
+                  <p className="font-medium text-white text-base">Open to New Opportunities</p>
+                  <p className="text-[#B5B5B5] text-sm mt-1">Accepting freelance projects • Available for remote and on-site work</p>
                 </div>
               </div>
             </div>

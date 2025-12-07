@@ -55,3 +55,27 @@
 .neon-animate {
   animation: neon-pulse 5s infinite;
 }
+
+.glow-outline {
+  position: relative;
+}
+
+.glow-outline::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  padding: var(--glow-width, 3px);
+  background: radial-gradient(320px at var(--x, 50%) var(--y, 50%), rgba(0, 255, 136, 0.75), rgba(0, 208, 128, 0.45) 50%, transparent 75%);
+  -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+  -webkit-mask-composite: xor;
+  mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+  mask-composite: exclude;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity .2s ease;
+}
+
+.glow-outline:hover::before {
+  opacity: 2;
+}

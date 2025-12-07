@@ -5,7 +5,7 @@ function LinkButton({ to, href, imageUrl, variant = 'outline', children }) {
   const isInternal = !!to;
   const MotionComponent = isInternal ? motion(Link) : motion.a;
 
-  const baseStyles = "w-full font-medium text-center p-4 transition-all duration-300 ease-in-out flex items-center justify-center gap-3 border rounded-none";
+  const baseStyles = "w-full font-medium text-center p-4 transition-all duration-300 ease-in-out flex items-center justify-center gap-3 border rounded-none glow-outline";
   
   const variants = {
     filled: "bg-[#00FF88] text-black border-transparent hover:bg-[#00D080]",

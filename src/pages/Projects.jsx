@@ -227,7 +227,7 @@ function ProjectCard({ project, index }) {
           transition: { duration: 0.3, ease: "easeOut" }
         }}
       >
-        <div className={`relative bg-white/70 dark:bg-dark-surface/90 backdrop-blur-xl rounded-none border ${config.borderColor} dark:border-dark-surface/50 shadow-xl hover:shadow-2xl transition-all duration-500 overflow-hidden`}>
+        <div className={`relative bg-white/70 dark:bg-dark-surface/90 backdrop-blur-xl rounded-none border ${config.borderColor} dark:border-dark-surface/50 shadow-xl hover:shadow-2xl transition-all duration-500 overflow-hidden glow-outline`}>
           {/* Gradient Overlay */}
           <div className={`absolute inset-0 bg-gradient-to-br ${config.accentColor} opacity-0 group-hover:opacity-5 transition-opacity duration-500`}></div>
           
@@ -386,7 +386,7 @@ function ProjectCard({ project, index }) {
             target="_blank"
             rel="noopener noreferrer"
             style={{ pointerEvents: 'auto' }}
-            className="flex items-center justify-center gap-2 bg-transparent text-slate-900 dark:text-white py-3 px-6 rounded-none hover:bg-slate-100 dark:hover:bg-white/10 transition-all duration-300 text-sm font-semibold border border-slate-900 dark:border-white"
+            className="flex items-center justify-center gap-2 bg-transparent text-slate-900 dark:text-white py-3 px-6 rounded-none hover:bg-slate-100 dark:hover:bg-white/10 transition-all duration-300 text-sm font-semibold border border-slate-900 dark:border-white glow-outline"
           >
             <Github className="w-4 h-4" /> 
             View Code
@@ -403,7 +403,7 @@ function ProjectCard({ project, index }) {
             target="_blank"
             rel="noopener noreferrer"
             style={{ pointerEvents: 'auto' }}
-            className="flex items-center justify-center gap-2 bg-[#00FF88] text-black py-3 px-6 rounded-none hover:bg-[#00D080] transition-all duration-300 text-sm font-semibold border border-transparent"
+            className="flex items-center justify-center gap-2 bg-[#00FF88] text-black py-3 px-6 rounded-none hover:bg-[#00D080] transition-all duration-300 text-sm font-semibold border border-transparent glow-outline"
           >
             <ExternalLink className="w-4 h-4" />
             Live Demo
