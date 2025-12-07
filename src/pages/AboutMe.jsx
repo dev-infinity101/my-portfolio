@@ -14,6 +14,7 @@ import {
   Zap
 } from 'lucide-react';
 import profilePic from '../assets/dev-smile.svg';
+const MotionLink = motion(Link);
 
 function AboutMe() {
   const timelineItems = [
@@ -171,7 +172,7 @@ function AboutMe() {
                 variants={slideInVariants}
               >
                 <p className="text-secondaryText dark:text-dark-text-secondary">
-                  Hi, I'm <span className="font-semibold text-blue-600 dark:text-dark-accent">Prabodh AKA DEV on Twitter</span>, 
+                  Hi, I'm <span className="font-semibold text-blue-600 dark:text-dark-accent">Prabodh Upadhyay AKA DEV on Twitter</span>, 
                   a freelance developer from Lucknow, India. I specialize in crafting modern, 
                   scalable web applications with a focus on user experience and performance.
                 </p>
@@ -183,14 +184,15 @@ function AboutMe() {
                   You can find me on Twitter, usually shitposting and occasionally posting Useful stuff too.
                 </p>
                 
-                <motion.div 
-                  className="inline-flex items-center gap-2 bg-[#00FF88] text-black px-6 py-3 rounded-none font-medium hover:bg-[#00D080] transition-all duration-300 glow-outline border border-transparent"
+                <MotionLink 
+                  to="/contact"
+                  className="inline-flex items-center gap-2 bg-[#00FF88] text-black px-6 py-3 rounded font-medium hover:bg-[#00D080] transition-all duration-300 glow-outline border border-transparent"
                   whileHover={{ y: -2 }}
                   whileTap={{ scale: 0.98 }}
                 >
                   <Briefcase size={18} />
-                  Open to Work
-                </motion.div>
+                  Hire me 
+                </MotionLink>
               </motion.div>
             </motion.div>
           </motion.div>
