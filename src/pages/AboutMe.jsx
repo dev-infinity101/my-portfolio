@@ -247,7 +247,7 @@ function ExperiencesSection({ experiences }) {
       </motion.div>
 
       <motion.div 
-        className="grid grid-cols-1 md:grid-cols-2 gap-6"
+        className="grid grid-cols-1 md:grid-cols-2 gap-8"
         variants={containerVariants}
       >
         {experiences.map((experience, index) => (
@@ -255,31 +255,25 @@ function ExperiencesSection({ experiences }) {
             key={index}
             className="group relative"
             variants={itemVariants}
-            whileHover={{ y: -8, scale: 1.02 }}
-            transition={{ duration: 0.3 }}
+            whileHover={{ y: -4, scale: 1.01 }}
+            transition={{ duration: 0.25 }}
           >
-            <div className="absolute inset-0 bg-gradient-to-r opacity-0 group-hover:opacity-20 transition-opacity duration-300 rounded-2xl blur-xl" 
-                 style={{ backgroundImage: `linear-gradient(to right, ${experience.color.split(' ')[1]}, ${experience.color.split(' ')[3]})` }}>
-            </div>
-            
-            <div className="relative bg-white/70 dark:bg-dark-surface/90 backdrop-blur-sm p-8 rounded-none border border-gray-200/50 dark:border-dark-surface/50 shadow-lg hover:shadow-2xl transition-all duration-500 h-full glow-outline">
-              <div className={`inline-flex items-center justify-center w-16 h-16 rounded-none bg-gradient-to-r ${experience.color} text-white mb-6 shadow-lg group-hover:scale-110 transition-transform duration-300`}>
-                {experience.icon}
+            <div className={`rounded-none p-[1px] bg-gradient-to-r ${experience.color} opacity-70 group-hover:opacity-100 transition-opacity duration-300 shadow-[0_0_20px_rgba(0,255,136,0.15)]`}>
+              <div className="relative bg-[#111111] text-white p-8 rounded-none border border-[#2A2A2A] ring-1 ring-[#00FF88]/50 hover:ring-[#00FF88]/80 shadow-[0_0_18px_rgba(0,255,136,0.12)] group-hover:shadow-[0_0_50px_rgba(0,255,136,0.35)] transition-all duration-300 h-full glow-outline">
+                <div className="flex items-start gap-4">
+                  <div className="w-12 h-12 flex items-center justify-center bg-[#00FF8820] text-[#00FF88] border border-[#00FF88]/50 shadow-[0_0_16px_rgba(0,255,136,0.25)]">
+                    {experience.icon}
+                  </div>
+                  <div className="flex-1">
+                    <h3 className="text-xl font-bold mb-1">
+                      {experience.title}
+                    </h3>
+                    <p className="text-[#D1D1D1] leading-relaxed">
+                      {experience.description}
+                    </p>
+                  </div>
+                </div>
               </div>
-              
-              <h3 className="text-2xl font-bold text-primaryText dark:text-white mb-4 group-hover:text-blue-600 dark:group-hover:text-dark-accent transition-colors duration-300">
-                {experience.title}
-              </h3>
-              
-              <p className="text-secondaryText dark:text-dark-text-secondary leading-relaxed">
-                {experience.description}
-              </p>
-              
-              <motion.div 
-                className="absolute bottom-4 right-4 w-2 h-2 bg-blue-500 dark:bg-dark-accent rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300"
-                animate={{ scale: [1, 1.5, 1] }}
-                transition={{ duration: 2, repeat: Infinity }}
-              />
             </div>
           </motion.div>
         ))}
@@ -314,22 +308,20 @@ function TimelineSection({ timelineItems }) {
       variants={containerVariants}
       initial="hidden"
       animate={inView ? "visible" : "hidden"}
-      className="mb-12" 
+      className="mb-12"
     >
       <motion.div className="text-center mb-8" variants={itemVariants}> 
         <h2 className="text-3xl lg:text-4xl font-bold mb-3 bg-gradient-to-r from-gray-900 via-blue-600 to-purple-600 dark:from-white dark:via-dark-accent dark:to-emerald-400 bg-clip-text text-transparent"> 
           Professional Journey
         </h2>
         <p className="text-base text-secondaryText dark:text-dark-text-secondary max-w-xl mx-auto"> 
-          My career path and the experiences that have shaped my professional growth
+          Milestones across roles and time
         </p>
       </motion.div>
 
       <div className="relative">
-        {/* Timeline Line */}
-        <div className="absolute left-3 md:left-4 top-0 bottom-0 w-0.5 bg-gradient-to-b from-blue-500 via-purple-500 to-cyan-500 dark:from-dark-accent dark:via-emerald-500 dark:to-teal-500 opacity-30"></div> 
-        
-        <div className="space-y-6"> 
+        <div className="absolute left-1/2 -translate-x-1/2 top-0 bottom-0 w-[2px] bg-gradient-to-b from-blue-500 via-purple-500 to-cyan-500 dark:from-dark-accent dark:via-emerald-500 dark:to-teal-500 opacity-30"></div>
+        <div className="space-y-10"> 
           {timelineItems.map((item, index) => (
             <TimelineItem key={index} item={item} index={index} />
           ))}
@@ -343,10 +335,10 @@ function TimelineItem({ item, index }) {
   const { ref, inView } = useInView({ triggerOnce: true, threshold: 0.2 });
 
   const itemVariants = {
-    hidden: { opacity: 0, x: -30 },
+    hidden: { opacity: 0, y: 40 },
     visible: { 
       opacity: 1, 
-      x: 0,
+      y: 0,
       transition: { duration: 0.7, ease: "easeOut", delay: index * 0.1 }
     },
   };
@@ -369,74 +361,65 @@ function TimelineItem({ item, index }) {
     }
   };
 
+  const parseStart = (duration) => {
+    const m = duration.match(/(\d{4})\s+([A-Za-z]+)/);
+    if (m) return `${m[2]} ${m[1]}`;
+    return duration;
+  };
+
+  const isLeft = index % 2 !== 0;
+
   return (
     <motion.div 
       ref={ref}
       variants={itemVariants}
       initial="hidden"
       animate={inView ? "visible" : "hidden"}
-      className="relative flex items-start gap-4 md:gap-6 group" 
+      className="relative grid grid-cols-11 gap-4 items-center"
     >
-      {/* Timeline Dot */}
-      <div className="relative z-10 flex-shrink-0">
-        <motion.div 
-          className="w-6 h-6 bg-gradient-to-r from-blue-500 to-purple-500 dark:from-dark-accent dark:to-emerald-600 rounded-none border-3 border-white dark:border-dark-surface shadow-md group-hover:scale-125 transition-transform duration-300" 
-          animate={{ 
-            boxShadow: [
-              "0 0 0 0 rgba(59, 130, 246, 0.4)",
-              "0 0 0 8px rgba(59, 130, 246, 0)", 
-            ]
-          }}
-          transition={{ 
-            duration: 2, 
-            repeat: Infinity,
-            delay: index * 0.5
-          }}
-        />
+      <div className={`${isLeft ? 'col-span-5 col-start-1 text-right' : 'col-span-5 col-start-7 text-left'}`}>
+        <div className="text-sm font-semibold text-blue-600 dark:text-dark-accent tracking-wide">
+          {parseStart(item.duration)}
+        </div>
       </div>
 
-      {/* Content */}
-      <motion.div 
-        className="flex-1 bg-white/80 dark:bg-dark-surface/90 backdrop-blur-md p-4 md:p-6 rounded-none shadow-md border border-gray-200/50 dark:border-dark-surface/50 hover:shadow-lg transition-all duration-300 group-hover:bg-white/90 dark:group-hover:bg-dark-surface glow-outline" 
-        whileHover={{ y: -3, scale: 1.01 }} 
-      >
-        <div className="flex flex-wrap items-center gap-2 mb-3"> 
-          <h3 className="text-lg md:text-xl font-bold text-primaryText dark:text-white group-hover:text-blue-600 dark:group-hover:text-dark-accent transition-colors duration-300"> 
-            {item.company}
-          </h3>
-          <span className={`px-2 py-0.5 text-xs font-semibold text-white rounded-none bg-gradient-to-r ${getTypeColor(item.type)} shadow-sm`}> 
-            {getTypeLabel(item.type)}
-          </span>
-        </div>
-        
-        <h4 className="text-base md:text-lg font-semibold text-blue-600 dark:text-dark-accent mb-1"> 
-          {item.role}
-        </h4>
-        
-        <div className="flex items-center gap-1 text-xs text-gray-500 dark:text-dark-text-secondary mb-3"> 
-          <Calendar size={14} /> 
-          <span className="font-medium">{item.duration}</span>
-        </div>
-        
-        <p className="text-gray-700 dark:text-dark-text-secondary mb-3 text-sm leading-relaxed"> 
-          {item.description}
-        </p>
-        
-        {item.technologies && (
-          <div className="flex flex-wrap gap-1"> 
-            {item.technologies.map((tech, techIndex) => (
-              <motion.span
-                key={techIndex}
-                className="px-2 py-0.5 text-xs bg-gray-100 dark:bg-dark-bg text-gray-700 dark:text-dark-text-secondary rounded-none font-medium hover:bg-blue-100 dark:hover:bg-dark-accent/20 transition-colors duration-200" 
-                whileHover={{ scale: 1.03 }} 
-                whileTap={{ scale: 0.97 }} 
-              >
-                {tech}
-              </motion.span>
-            ))}
+      <div className="col-span-1 col-start-6 flex justify-center">
+        <motion.div 
+          className="relative w-16 h-16 rounded-full bg-[#1C1C1C] text-white flex items-center justify-center ring-4 ring-[#00FF88] shadow-[0_0_30px_rgba(0,255,136,0.35)]"
+          whileHover={{ scale: 1.05 }}
+        >
+          <span className="text-lg font-bold text-[#00FF88]">{String(index + 1)}</span>
+        </motion.div>
+      </div>
+
+      <div className={`${isLeft ? 'col-span-5 col-start-7' : 'col-span-5 col-start-1'}`}>
+        <motion.div 
+          className="bg-white/80 dark:bg-dark-surface/90 backdrop-blur-md p-4 md:p-6 rounded-none shadow-md border border-gray-200/50 dark:border-dark-surface/50 glow-outline"
+          whileHover={{ y: -2 }}
+        >
+          <div className="flex items-center gap-2 mb-2">
+            <h3 className="text-lg md:text-xl font-bold text-primaryText dark:text-white">{item.company}</h3>
+            <span className={`px-2 py-0.5 text-xs font-semibold text-white rounded-none bg-gradient-to-r ${getTypeColor(item.type)} shadow-sm`}>{getTypeLabel(item.type)}</span>
           </div>
-        )}
-      </motion.div>
+          <div className="text-blue-600 dark:text-dark-accent font-semibold mb-1">{item.role}</div>
+          <div className="text-xs text-gray-500 dark:text-dark-text-secondary mb-3">{item.duration}</div>
+          <p className="text-gray-700 dark:text-dark-text-secondary text-sm leading-relaxed mb-3">{item.description}</p>
+          {item.technologies && (
+            <div className="flex flex-wrap gap-1">
+              {item.technologies.map((tech, techIndex) => (
+                <motion.span
+                  key={techIndex}
+                  className="px-2 py-0.5 text-xs bg-gray-100 dark:bg-dark-bg text-gray-700 dark:text-dark-text-secondary rounded-none font-medium hover:bg-blue-100 dark:hover:bg-dark-accent/20 transition-colors"
+                  whileHover={{ scale: 1.03 }}
+                  whileTap={{ scale: 0.97 }}
+                >
+                  {tech}
+                </motion.span>
+              ))}
+            </div>
+          )}
+        </motion.div>
+      </div>
     </motion.div>
   );
 }
