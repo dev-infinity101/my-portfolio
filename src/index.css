@@ -25,10 +25,7 @@
   }
 }
 
-@keyframes neon-pulse-blue {
-  0%, 100% { box-shadow: 0 0 5px theme('colors.blue.400'); }
-  50% { box-shadow: 0 0 20px theme('colors.blue.400'), 0 0 30px theme('colors.blue.400'); }
-}
+
 
 @keyframes neon-pulse-dark {
   0%, 100% { box-shadow: 0 0 5px rgba(0, 255, 136, 0.3); }
